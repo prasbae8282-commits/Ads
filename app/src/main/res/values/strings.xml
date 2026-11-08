@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">CuanNonton</string>
-    <string name="slogan">Nonton Iklan 15 Detik, Cuan Mengalir</string>
-    <string name="reward_per_ad">Rp 500</string>
-    <string name="min_withdrawal">Rp 50.000</string>
+    <string name="app_name">KlikCuan</string>
+    <string name="slogan">Klik Iklan Berhadiah Rp 1.000 - Rp 2.500</string>
+    <string name="reward_per_ad">Rp 1.000 - Rp 2.500</string>
+    <string name="min_withdrawal">Rp 100.000</string>
 </resources>

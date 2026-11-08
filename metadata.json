@@ -1,6 +1,6 @@
 {
-  "name": "CuanNonton",
-  "description": "Aplikasi penghasil rupiah dengan menonton iklan 15 detik. Dapatkan Rp 500 per iklan dan tarik saldo mulai Rp 50.000 ke DANA, GoPay, OVO, ShopeePay, atau Bank Transfer.",
+  "name": "KlikCuan",
+  "description": "Platform web penghasil rupiah dengan klik iklan. Dapatkan reward min Rp 1.000 s/d maks Rp 2.500 per klik iklan, bonus referral Rp 15.000, dan tarik saldo mulai Rp 100.000 ke DANA, OVO, atau GoPay.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"

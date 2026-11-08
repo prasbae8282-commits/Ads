@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CuanNonton - Nonton Iklan 15 Detik Dibayar Rp 500</title>
-    <meta name="description" content="Aplikasi penghasil rupiah terpercaya. Cukup tonton iklan 15 detik dan dibayar Rp 500 per iklan. Minimal penarikan Rp 50.000 langsung cair ke DANA, GoPay, OVO, ShopeePay, dan Transfer Bank.">
-    <meta name="keywords" content="aplikasi penghasil uang, nonton iklan dapat uang, cuannonton, saldo dana gratis, penghasil rupiah, gopay gratis">
+    <title>KlikCuan - Klik Iklan Dibayar Rp 1.000 - Rp 2.500 | Tautkan DANA, OVO, GoPay</title>
+    <meta name="description" content="Platform web penghasil rupiah terpercaya. Cukup klik iklan sponsor dan dapatkan Rp 1.000 - Rp 2.500 per klik! Bagikan referral dapatkan Rp 15.000 per teman. Minimal penarikan Rp 100.000 langsung cair ke DANA, OVO, GoPay.">
+    <meta name="keywords" content="klik iklan dapat uang, klikcuan, penghasil rupiah, saldo dana gratis, referral 15000, gopay gratis, ovo gratis">
     
     <!-- Open Graph for Social Sharing / Vercel Preview -->
-    <meta property="og:title" content="CuanNonton - Nonton Iklan 15 Detik Dibayar Rp 500">
-    <meta property="og:description" content="Minimal penarikan Rp 50.000 langsung cair ke DANA, GoPay, OVO, ShopeePay. Tanpa biaya admin!">
+    <meta property="og:title" content="KlikCuan - Klik Iklan Dibayar Rp 1.000 s/d Rp 2.500">
+    <meta property="og:description" content="Tautkan DANA, OVO, GoPay. Bonus referral Rp 15.000 per teman. Minimal penarikan Rp 100.000 tanpa biaya admin!">
     <meta property="og:image" content="/images/hero_banner.jpg">
     <meta property="og:type" content="website">
 
@@ -60,72 +60,85 @@
         .glow-gold {
             box-shadow: 0 0 35px -5px rgba(245, 158, 11, 0.45);
         }
-        @keyframes pulse-slow {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.03); opacity: 0.92; }
+        .glow-dana {
+            box-shadow: 0 0 25px -5px rgba(17, 142, 234, 0.4);
         }
-        .animate-pulse-slow {
-            animation: pulse-slow 2.5s infinite ease-in-out;
+        .glow-ovo {
+            box-shadow: 0 0 25px -5px rgba(76, 52, 148, 0.45);
+        }
+        .glow-gopay {
+            box-shadow: 0 0 25px -5px rgba(0, 174, 214, 0.4);
         }
     </style>
 </head>
 <body class="bg-slate-900 text-slate-100 font-sans antialiased overflow-x-hidden">
 
-    <!-- FLOATING TOAST NOTIFICATION -->
+    <!-- FLOATING TOAST NOTIFICATION CONTAINER -->
     <div id="toast-container" class="fixed top-20 right-4 z-50 flex flex-col gap-2 pointer-events-none"></div>
 
     <!-- NAVBAR -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
             <a href="#" class="flex items-center space-x-3">
-                <img src="/images/reward_coin.jpg" alt="Logo CuanNonton" class="w-9 h-9 rounded-full object-cover shadow-md shadow-brand-500/20">
+                <img src="/images/reward_coin.jpg" alt="Logo KlikCuan" class="w-9 h-9 rounded-full object-cover shadow-md shadow-brand-500/20">
                 <div class="flex flex-col">
-                    <span class="text-lg sm:text-xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-amber-300">CuanNonton</span>
-                    <span class="text-[9px] text-slate-400 font-semibold tracking-wider">INDONESIA</span>
+                    <span class="text-lg sm:text-xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-amber-300">KlikCuan</span>
+                    <span class="text-[9px] text-slate-400 font-semibold tracking-wider">KLIK IKLAN DAPAT UANG</span>
                 </div>
             </a>
 
             <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-slate-300">
-                <a href="#simulasi" class="hover:text-emerald-400 transition">Simulasi 15s</a>
-                <a href="#misi-iklan" class="hover:text-amber-400 transition flex items-center gap-1">
-                    <span>Misi Iklan</span>
-                    <span class="text-[10px] bg-amber-500/20 text-amber-300 font-bold px-1.5 py-0.5 rounded">Bonus</span>
+                <a href="#mode-klik" class="hover:text-emerald-400 transition flex items-center gap-1">
+                    <span>Klik Iklan</span>
+                    <span class="text-[9px] bg-emerald-500/20 text-emerald-300 font-bold px-1.5 py-0.5 rounded">Rp 1rb - 2.5rb</span>
                 </a>
+                <a href="#referral" class="hover:text-amber-400 transition flex items-center gap-1">
+                    <span>Ajak Teman</span>
+                    <span class="text-[9px] bg-amber-500/20 text-amber-300 font-extrabold px-1.5 py-0.5 rounded">+Rp 15.000</span>
+                </a>
+                <a href="#tautkan-ewallet" class="hover:text-emerald-400 transition">Tautkan E-Wallet</a>
                 <a href="#kalkulator" class="hover:text-emerald-400 transition">Kalkulator</a>
-                <a href="#cara-kerja" class="hover:text-emerald-400 transition">Cara Kerja</a>
                 <a href="#faq" class="hover:text-emerald-400 transition">FAQ</a>
             </nav>
 
-            <!-- AUTH & ACTIONS AREA -->
+            <!-- AUTH & ACCOUNT NAVIGATION AREA -->
             <div class="flex items-center space-x-2 sm:space-x-3">
                 <!-- Logged Out State Button -->
                 <div id="nav-logged-out" class="flex items-center space-x-2">
-                    <button onclick="openLoginModal()" class="inline-flex items-center space-x-1.5 bg-slate-800 hover:bg-slate-700 text-amber-400 hover:text-amber-300 text-xs sm:text-sm font-bold px-3 sm:px-4 py-2 rounded-xl border border-slate-700 transition">
-                        <span>🔑 Masuk Akun</span>
-                    </button>
-                    <button onclick="openDownloadModal()" class="bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white text-xs sm:text-sm font-bold px-3.5 sm:px-4 py-2 rounded-xl shadow-lg shadow-emerald-500/25 transition">
-                        Unduh APK
+                    <button onclick="openGmailLoginModal()" class="inline-flex items-center space-x-1.5 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white text-xs sm:text-sm font-bold px-4 py-2 rounded-xl shadow-lg shadow-emerald-500/25 transition">
+                        <svg class="w-4 h-4" viewBox="0 0 24 24"><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/></svg>
+                        <span>Masuk dengan Gmail</span>
                     </button>
                 </div>
 
-                <!-- Logged In State Profile Badge (Hidden by default) -->
+                <!-- Logged In State Profile Badge & Menu -->
                 <div id="nav-logged-in" class="hidden flex items-center space-x-2 sm:space-x-3">
-                    <div class="flex items-center space-x-2 bg-slate-800/90 border border-slate-700 rounded-xl px-2.5 py-1.5 cursor-pointer" onclick="openProfileDrawer()">
+                    <!-- User Profile Button (Opens Account Profile Modal) -->
+                    <button onclick="openProfileModal('summary')" class="flex items-center space-x-2 bg-slate-800/90 hover:bg-slate-800 border border-slate-700 rounded-xl px-2.5 py-1.5 transition">
                         <div class="relative">
-                            <div class="w-7 h-7 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-xs" id="nav-user-avatar">B</div>
+                            <div class="w-7 h-7 rounded-full bg-gradient-to-tr from-emerald-500 to-amber-400 text-slate-950 flex items-center justify-center font-extrabold text-xs" id="nav-user-avatar">B</div>
                             <span class="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-emerald-400 ring-2 ring-slate-900"></span>
                         </div>
                         <div class="text-left hidden sm:block">
-                            <div class="text-xs font-bold text-white leading-none" id="nav-user-name">Budi Santoso</div>
+                            <div class="text-xs font-bold text-white leading-none flex items-center gap-1" id="nav-user-name">
+                                Budi Santoso
+                            </div>
                             <div class="text-[10px] text-emerald-400 font-extrabold mt-0.5" id="nav-user-balance">Rp 48.500</div>
                         </div>
-                    </div>
+                    </button>
 
+                    <!-- Referral Shortcut Button -->
+                    <button onclick="scrollToReferralSection()" class="hidden md:inline-flex items-center space-x-1 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 text-amber-300 text-xs font-bold px-3 py-2 rounded-xl transition">
+                        <span>🎁 Ajak Teman (+15rb)</span>
+                    </button>
+
+                    <!-- Tarik Saldo Button -->
                     <button onclick="openWithdrawModal()" class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-extrabold text-xs px-3 py-2 rounded-xl shadow-md transition">
                         Tarik Saldo
                     </button>
 
-                    <button onclick="logoutUser()" title="Keluar Akun" class="text-slate-400 hover:text-red-400 p-1.5 rounded-lg hover:bg-slate-800 transition">
+                    <!-- Logout Button -->
+                    <button onclick="logoutUser()" title="Keluar Akun" class="text-slate-400 hover:text-red-400 p-2 rounded-xl bg-slate-800/60 hover:bg-slate-800 transition">
                         <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clip-rule="evenodd"/></svg>
                     </button>
                 </div>
@@ -134,18 +147,18 @@
     </header>
 
     <!-- HERO SECTION -->
-    <section class="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+    <section class="relative pt-24 pb-12 md:pt-32 md:pb-16 overflow-hidden">
         <!-- Ambient Glow -->
         <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-emerald-500/20 rounded-full blur-[130px] pointer-events-none"></div>
         <div class="absolute top-1/3 right-10 w-72 h-72 bg-amber-500/15 rounded-full blur-[110px] pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 relative">
             
-            <!-- TOP AD BANNER LEADERBOARD (728x90 Desktop / 320x50 Mobile) WITH CLICK FEATURE -->
+            <!-- TOP AD BANNER LEADERBOARD (728x90 Desktop / 320x50 Mobile) WITH REWARD CLICK TRIGGER -->
             <div class="mb-8 flex flex-col items-center justify-center">
                 <div class="flex items-center space-x-2 mb-1.5">
                     <span class="text-[9px] bg-amber-500/20 text-amber-300 font-extrabold px-2 py-0.5 rounded uppercase tracking-wider">Sponsor Utama</span>
-                    <span class="text-[10px] text-slate-400">👉 Klik banner ini untuk klaim Tiket Undian Saldo Rp 10.000</span>
+                    <span class="text-[10px] text-slate-300 font-semibold">👉 Klik banner di bawah untuk dapatkan <strong class="text-amber-400">Rp 1.000 - Rp 2.500</strong></span>
                 </div>
                 <!-- Desktop 728x90 -->
                 <div class="hidden md:flex justify-center overflow-hidden rounded-xl border border-slate-800 bg-slate-950 p-1.5 shadow-lg relative group">
@@ -176,8 +189,8 @@
 
                 <!-- Interactive Click Trigger Bar for Top Banner -->
                 <div class="mt-2 flex items-center justify-center gap-2">
-                    <button onclick="handleAdClick('top_banner', 500, 'Klaim Bonus Sponsor Utama')" class="bg-gradient-to-r from-amber-500/20 to-emerald-500/20 hover:from-amber-500/30 hover:to-emerald-500/30 border border-amber-500/40 text-amber-300 text-xs font-bold px-4 py-1.5 rounded-full transition transform hover:scale-105 flex items-center gap-1.5 shadow-md">
-                        <span>⚡ Klik Banner Sponsor & Dapatkan +Rp 500</span>
+                    <button onclick="handleAdClick('top_banner', 'Banner Sponsor Utama')" class="bg-gradient-to-r from-amber-500/20 via-emerald-500/20 to-amber-500/20 hover:from-amber-500/30 hover:to-emerald-500/30 border border-amber-500/40 text-amber-300 text-xs font-bold px-4 py-1.5 rounded-full transition transform hover:scale-105 flex items-center gap-1.5 shadow-md">
+                        <span>⚡ Klik Banner Sponsor & Klaim (Min. Rp 1.000 - Maks. Rp 2.500)</span>
                         <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
                     </button>
                 </div>
@@ -188,44 +201,42 @@
                 <div class="lg:col-span-7 text-center lg:text-left">
                     <div class="inline-flex items-center space-x-2 bg-emerald-500/10 border border-emerald-500/30 px-3.5 py-1.5 rounded-full mb-5">
                         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                        <span class="text-xs font-bold text-emerald-300">100% Terbukti Membayar • E-Wallet Indonesia</span>
+                        <span class="text-xs font-bold text-emerald-300">Mode Klik Iklan • Min Rp 1.000 s/d Maks Rp 2.500 Per Klik</span>
                     </div>
 
                     <h1 class="text-3xl sm:text-5xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight mb-5">
-                        Nonton Iklan <span class="text-amber-400">15 Detik</span>,<br>
-                        Dibayar <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300">Rp 500</span> Per Iklan!
+                        Klik Iklan, Dibayar<br>
+                        <span class="text-amber-400">Min. Rp 1.000</span> s/d <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300">Maks. Rp 2.500</span>!
                     </h1>
 
                     <p class="text-slate-300 text-sm sm:text-base mb-6 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                        Kumpulkan saldo rupiah cukup dari ponsel Anda. Minimal penarikan hanya 
-                        <strong class="text-white font-bold">Rp 50.000</strong> langsung ditransfer ke <strong class="text-emerald-400">DANA, GoPay, OVO, ShopeePay & Bank Transfer</strong> tanpa potongan biaya admin!
+                        Tanpa perlu menonton video lama. Cukup klik iklan sponsor di web untuk mendapatkan reward langsung. Dapatkan juga <strong class="text-amber-400">Bonus Referral Rp 15.000</strong> per teman yang Anda ajak! Minimal penarikan <strong class="text-white font-bold">Rp 100.000</strong> langsung ditransfer ke <strong class="text-emerald-400">DANA, OVO, atau GoPay</strong> Anda tanpa potongan biaya admin!
                     </p>
 
                     <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 mb-8">
-                        <button onclick="openDownloadModal()" class="w-full sm:w-auto inline-flex items-center justify-center space-x-2.5 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-bold px-6 py-3.5 rounded-xl shadow-xl shadow-emerald-500/30 transition transform hover:-translate-y-0.5">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
-                            <span>Unduh APK CuanNonton</span>
+                        <button onclick="scrollToAdClickSection()" class="w-full sm:w-auto inline-flex items-center justify-center space-x-2.5 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-bold px-7 py-3.5 rounded-xl shadow-xl shadow-emerald-500/30 transition transform hover:-translate-y-0.5">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/></svg>
+                            <span>Mulai Klik Iklan Sekarang</span>
                         </button>
 
-                        <button onclick="scrollToSimulator()" class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 font-semibold px-5 py-3.5 rounded-xl transition">
-                            <svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
-                            <span>Coba Simulator & Klik Iklan</span>
+                        <button onclick="scrollToReferralSection()" class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-amber-500/20 to-amber-600/20 hover:from-amber-500/30 hover:to-amber-600/30 border border-amber-500/40 text-amber-300 font-bold px-6 py-3.5 rounded-xl transition">
+                            <span>🎁 Ajak Teman (+Rp 15.000)</span>
                         </button>
                     </div>
 
                     <!-- Trust Stats Grid -->
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-slate-800 text-center lg:text-left">
                         <div class="bg-slate-900/60 p-2.5 rounded-xl border border-slate-800">
-                            <div class="text-lg font-extrabold text-amber-400">Rp 500</div>
-                            <div class="text-[11px] text-slate-400">Per Iklan 15s</div>
+                            <div class="text-lg font-extrabold text-amber-400">Rp 1rb - 2.5rb</div>
+                            <div class="text-[11px] text-slate-400">Reward Per Klik</div>
                         </div>
                         <div class="bg-slate-900/60 p-2.5 rounded-xl border border-slate-800">
-                            <div class="text-lg font-extrabold text-emerald-400">Rp 50.000</div>
+                            <div class="text-lg font-extrabold text-emerald-400">Rp 15.000</div>
+                            <div class="text-[11px] text-slate-400">Bonus Referral</div>
+                        </div>
+                        <div class="bg-slate-900/60 p-2.5 rounded-xl border border-slate-800">
+                            <div class="text-lg font-extrabold text-white">Rp 100.000</div>
                             <div class="text-[11px] text-slate-400">Min. Penarikan</div>
-                        </div>
-                        <div class="bg-slate-900/60 p-2.5 rounded-xl border border-slate-800">
-                            <div class="text-lg font-extrabold text-white">1 - 15 Mnt</div>
-                            <div class="text-[11px] text-slate-400">Pencairan Cepat</div>
                         </div>
                         <div class="bg-slate-900/60 p-2.5 rounded-xl border border-slate-800">
                             <div class="text-lg font-extrabold text-emerald-400">Rp 0</div>
@@ -234,55 +245,75 @@
                     </div>
                 </div>
 
-                <!-- Right Live Account & Interactive Status Card -->
+                <!-- Right Live Account Card -->
                 <div class="lg:col-span-5">
                     <div class="bg-slate-900 border border-slate-800 rounded-3xl p-5 shadow-2xl relative glow-emerald">
                         <!-- Top header of status card -->
                         <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-4">
                             <div class="flex items-center space-x-2">
-                                <img src="/images/reward_coin.jpg" class="w-8 h-8 rounded-full object-cover">
+                                <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-emerald-500 to-amber-400 text-slate-950 flex items-center justify-center font-extrabold text-sm" id="hero-user-avatar">B</div>
                                 <div>
                                     <div class="text-xs font-bold text-white flex items-center gap-1.5">
                                         <span id="hero-user-name">Budi Santoso</span>
-                                        <span class="text-[9px] bg-emerald-500/20 text-emerald-300 font-extrabold px-1.5 py-0.2 rounded">VIP MEMBER</span>
+                                        <span class="text-[9px] bg-emerald-500/20 text-emerald-300 font-extrabold px-1.5 py-0.2 rounded" id="hero-kyc-badge">GMAIL TERTAUT</span>
                                     </div>
-                                    <div class="text-[10px] text-slate-400" id="hero-wallet-type">Tujuan: DANA (0812-****-7890)</div>
+                                    <div class="text-[10px] text-slate-400" id="hero-user-email">prasbae8282@gmail.com</div>
                                 </div>
                             </div>
-                            <button onclick="openLoginModal()" class="text-[11px] text-amber-400 hover:text-amber-300 font-bold underline">
-                                Ganti Akun
+                            <button onclick="openGmailLoginModal()" class="text-[11px] text-amber-400 hover:text-amber-300 font-bold underline flex items-center gap-1">
+                                <span>Ganti Akun</span>
                             </button>
                         </div>
 
-                        <!-- Realtime Balance Display -->
+                        <!-- Realtime Balance Display with Rp 100.000 Target -->
                         <div class="bg-gradient-to-br from-slate-950 to-slate-900 border border-slate-800 rounded-2xl p-4 mb-4">
                             <div class="flex justify-between items-center text-xs text-slate-400">
-                                <span>Saldo Rekening CuanNonton</span>
-                                <span class="text-[10px] text-emerald-400 font-semibold">Tersimpan di Browser</span>
+                                <span>Saldo Rekening Akun</span>
+                                <span class="text-[10px] text-emerald-400 font-semibold" id="hero-active-wallet-tag">DANA: 0812-3456-7890</span>
                             </div>
                             <div class="text-3xl font-extrabold text-emerald-400 mt-1 mb-2" id="hero-balance-text">Rp 48.500</div>
                             
-                            <!-- Progress Bar to Rp 50.000 -->
+                            <!-- Progress Bar to Rp 100.000 -->
                             <div class="space-y-1">
                                 <div class="flex justify-between text-[11px]">
-                                    <span class="text-slate-400">Progres Menuju Penarikan:</span>
-                                    <span class="text-amber-400 font-bold" id="hero-progress-text">97% (Sisa Rp 1.500)</span>
+                                    <span class="text-slate-400">Progres Menuju Rp 100.000:</span>
+                                    <span class="text-amber-400 font-bold" id="hero-progress-text">48.5% (Sisa Rp 51.500)</span>
                                 </div>
                                 <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
-                                    <div id="hero-progress-bar" class="bg-gradient-to-r from-emerald-500 to-amber-400 h-full rounded-full transition-all duration-500" style="width: 97%;"></div>
+                                    <div id="hero-progress-bar" class="bg-gradient-to-r from-emerald-500 to-amber-400 h-full rounded-full transition-all duration-500" style="width: 48.5%;"></div>
                                 </div>
+                            </div>
+                        </div>
+
+                        <!-- Device Security & 1 HP 1 Akun Status Badge -->
+                        <div class="p-3 bg-slate-950/80 border border-slate-800 rounded-2xl flex items-center justify-between text-[11px] mb-3">
+                            <div class="flex items-center space-x-2.5">
+                                <span class="text-xl">📱</span>
+                                <div class="text-left">
+                                    <div class="font-bold text-white flex items-center gap-1.5">
+                                        <span id="hero-device-name">Samsung Galaxy (Android)</span>
+                                        <span class="text-[9px] bg-emerald-500/20 text-emerald-300 font-extrabold px-1.5 py-0.2 rounded border border-emerald-500/30">1 HP 1 AKUN</span>
+                                    </div>
+                                    <div class="text-[10px] text-slate-400 font-mono" id="hero-device-id">ID: DEV-HP-8421-9AF3</div>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-[10px] text-emerald-400 font-extrabold flex items-center gap-1 justify-end">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                                    TERKUNCI AMAN
+                                </span>
+                                <span class="text-[9px] text-slate-400">Anti-Manipulasi Aktif</span>
                             </div>
                         </div>
 
                         <!-- Quick Action Buttons -->
                         <div class="grid grid-cols-2 gap-2.5">
-                            <button onclick="scrollToSimulator()" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold py-2.5 px-3 rounded-xl flex items-center justify-center space-x-1 shadow-md shadow-emerald-600/30 transition">
-                                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/></svg>
-                                <span>Nonton Iklan (+500)</span>
+                            <button onclick="scrollToAdClickSection()" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold py-2.5 px-3 rounded-xl flex items-center justify-center space-x-1 shadow-md shadow-emerald-600/30 transition">
+                                <span>⚡ Klik Iklan (+1rb - 2.5rb)</span>
                             </button>
 
                             <button onclick="openWithdrawModal()" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 text-amber-400 text-xs font-bold py-2.5 px-3 rounded-xl flex items-center justify-center space-x-1 transition">
-                                <span>💸 Tarik ke E-Wallet</span>
+                                <span>💸 Tarik (Min. 100rb)</span>
                             </button>
                         </div>
                     </div>
@@ -292,189 +323,84 @@
         </div>
     </section>
 
-    <!-- SECTION 1: SIMULATOR & ACCELERATION ADS (PLACED SEJAJAR / SIDE-BY-SIDE) -->
-    <section id="simulasi" class="py-16 bg-slate-950/80 border-y border-slate-800 relative">
+    <!-- SECTION 1: MODE KLIK IKLAN BERHADIAH SEJAJAR (REWARD MIN 1.000 S/D MAKS 2.500) -->
+    <section id="mode-klik" class="py-14 bg-slate-950 border-y border-slate-800 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="text-center mb-10">
-                <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Fitur Interaktif & Monetisasi</span>
-                <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-3 mb-3">Simulasi Nonton Iklan & Fitur Akselerasi Cuan</h2>
+                <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Mode Klik Iklan Aktif</span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-3 mb-2">Pilih & Klik Iklan Sponsor</h2>
                 <p class="text-slate-400 text-xs sm:text-sm max-w-2xl mx-auto">
-                    Kedua panel di bawah ditempatkan <strong class="text-white">sejajar</strong>. Anda bisa memutar iklan 15 detik di sebelah kiri atau mengklik iklan booster sponsor di sebelah kanan untuk mempercepat timer dan melipatgandakan saldo!
+                    Tanpa perlu menunggu video! Cukup klik tombol pada banner sponsor di bawah untuk langsung mengklaim reward 
+                    <strong class="text-amber-400 font-extrabold">Min. Rp 1.000 s/d Maks. Rp 2.500</strong> per klik yang masuk ke saldo akun Anda.
                 </p>
             </div>
 
-            <!-- SIDE-BY-SIDE (SEJAJAR) 2-COLUMN LAYOUT -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <!-- 2 CARDS SEJAJAR (SIDE-BY-SIDE): 300x250 & 160x300 BANNERS -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch mb-8">
                 
-                <!-- COLUMN 1 (Kiri): Video Ad Simulator 15 Detik -->
-                <div class="lg:col-span-6 bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-2xl relative glow-emerald">
-                    <div class="flex items-center justify-between pb-4 border-b border-slate-800 mb-4">
-                        <div>
-                            <span class="text-xs text-slate-400 uppercase font-semibold">Simulasi Player</span>
-                            <div class="text-lg font-extrabold text-white">Layar Nonton Iklan 15s</div>
-                        </div>
-                        <div class="text-right">
-                            <span class="text-[10px] text-slate-400 uppercase font-semibold">Reward Siap Klaim</span>
-                            <div class="text-lg font-extrabold text-amber-400" id="sim-current-multiplier-badge">Rp 500</div>
-                        </div>
+                <!-- CARD 1 (SEJAJAR): 300x250 Medium Rectangle (afdec985419475c346c2f6feb2d89c7d) -->
+                <div class="lg:col-span-7 bg-slate-900 border border-slate-800 rounded-3xl p-6 flex flex-col justify-between items-center text-center relative glow-emerald">
+                    <div class="w-full pb-3 border-b border-slate-800 mb-3 flex items-center justify-between">
+                        <span class="text-[10px] bg-emerald-500/20 text-emerald-300 font-bold px-2 py-0.5 rounded uppercase">IKLAN SPONSOR 1 (300x250)</span>
+                        <span class="text-xs font-extrabold text-amber-400 bg-slate-950 px-2.5 py-1 rounded-lg border border-slate-800">Reward: Rp 1.000 - Rp 2.500</span>
                     </div>
 
-                    <!-- Idle Screen State -->
-                    <div id="sim-idle-view" class="py-8 text-center">
-                        <div class="w-16 h-16 rounded-full bg-emerald-500/10 border-2 border-emerald-500/30 flex items-center justify-center mx-auto mb-3 text-emerald-400">
-                            <svg class="w-8 h-8 fill-current" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/></svg>
-                        </div>
-                        <h3 class="text-base font-bold text-white mb-1">Siap Nonton Iklan 15 Detik?</h3>
-                        <p class="text-slate-400 text-xs mb-5 max-w-sm mx-auto">Klik tombol di bawah untuk memulai timer 15 detik atau gunakan iklan booster di sebelah kanan untuk skip waktu!</p>
-                        <button onclick="startAdSimulation()" class="bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-extrabold text-sm px-6 py-3 rounded-xl shadow-lg shadow-emerald-500/25 transition transform hover:scale-105">
-                            ▶️ Mulai Putar Iklan (+Rp 500)
-                        </button>
+                    <div class="my-auto overflow-hidden rounded-2xl border border-slate-800 bg-slate-950 p-2 shadow-inner">
+                        <script>
+                          atOptions = {
+                            'key' : 'afdec985419475c346c2f6feb2d89c7d',
+                            'format' : 'iframe',
+                            'height' : 250,
+                            'width' : 300,
+                            'params' : {}
+                          };
+                        </script>
+                        <script src="https://dcengg.org/22/afdec985419475c346c2f6feb2d89c7d"></script>
                     </div>
 
-                    <!-- Playing State -->
-                    <div id="sim-playing-view" class="py-4 text-center hidden">
-                        <div class="bg-slate-950 border border-slate-800 rounded-2xl p-4 mb-4 text-left">
-                            <div class="flex items-center justify-between text-xs text-slate-400 mb-2 pb-2 border-b border-slate-800">
-                                <span class="font-bold text-amber-400 flex items-center gap-1.5">
-                                    <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
-                                    <span>Sponsor Aktif: Tokopedia Promo 2026</span>
-                                </span>
-                                <span class="bg-slate-800 px-2.5 py-0.5 rounded-full text-slate-200 font-mono text-xs font-bold" id="sim-timer-display">⏱️ 15 detik</span>
-                            </div>
-
-                            <!-- Countdown Progress Bar -->
-                            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden mb-3">
-                                <div id="sim-ad-timer-bar" class="bg-amber-400 h-full w-full transition-all duration-1000 ease-linear"></div>
-                            </div>
-
-                            <p class="text-xs text-slate-300">Menonton iklan sponsor... Tombol klaim di bawah akan terbuka otomatis saat timer selesai.</p>
-                        </div>
-
-                        <!-- Action Buttons -->
-                        <div class="flex flex-col gap-2">
-                            <button id="sim-claim-btn" disabled class="w-full bg-slate-800 text-slate-500 cursor-not-allowed font-bold py-3 rounded-xl transition text-sm">
-                                🔒 Tunggu 15 Detik
-                            </button>
-
-                            <!-- Direct Skip Feature linked to Sponsor -->
-                            <button onclick="handleAdClick('skip_sponsor', 500, 'Skip Timer Langsung Selesai')" class="w-full bg-gradient-to-r from-amber-500/20 to-emerald-500/20 hover:from-amber-500/30 hover:to-emerald-500/30 border border-amber-500/40 text-amber-300 text-xs font-bold py-2.5 rounded-xl transition flex items-center justify-center gap-1.5">
-                                <span>⚡ Klik Sponsor Ini Untuk Lewati Timer & Langsung Klaim!</span>
-                                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Reward Claimed State -->
-                    <div id="sim-reward-view" class="py-6 text-center hidden">
-                        <div class="w-14 h-14 rounded-full bg-amber-400/20 border-2 border-amber-400 flex items-center justify-center mx-auto mb-2 text-amber-400 text-2xl animate-bounce">
-                            🎉
-                        </div>
-                        <div class="text-xl font-extrabold text-amber-400 mb-1" id="sim-reward-amount-text">+Rp 500 Berhasil Masuk!</div>
-                        <p class="text-slate-300 text-xs mb-5">Saldo akun Anda telah bertambah. Teruskan nonton atau klik sponsor untuk melipatgandakan penghasilan!</p>
-                        
-                        <div class="flex flex-col sm:flex-row justify-center gap-2.5">
-                            <button onclick="startAdSimulation()" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-5 py-2.5 rounded-xl text-xs transition">
-                                Tonton Iklan Lagi (+500)
-                            </button>
-                            <button onclick="openWithdrawModal()" class="bg-slate-800 hover:bg-slate-700 text-amber-400 font-bold px-5 py-2.5 rounded-xl text-xs border border-slate-700 transition">
-                                Tarik Saldo Sekarang
-                            </button>
-                        </div>
-                    </div>
+                    <button onclick="handleAdClick('ad_300x250', 'Iklan Sponsor Display 300x250')" class="w-full mt-4 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-extrabold text-sm py-3 px-4 rounded-xl shadow-lg transition transform hover:scale-[1.02]">
+                        👉 KLIK IKLAN INI (Dapatkan Min Rp 1.000 - Maks Rp 2.500)
+                    </button>
                 </div>
 
-                <!-- COLUMN 2 (Kanan - SEJAJAR): Booster Ads Sejajar (300x250 & 160x300) -->
-                <div class="lg:col-span-6 bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-2xl relative glow-gold">
-                    <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-4">
-                        <div>
-                            <span class="text-xs text-amber-400 uppercase font-semibold">Fitur Klik Booster</span>
-                            <div class="text-lg font-extrabold text-white">Sponsor Berhadiah (Sejajar)</div>
-                        </div>
-                        <span class="text-[10px] bg-amber-500/20 text-amber-300 font-extrabold px-2 py-0.5 rounded">FITUR KLIK AKTIF</span>
+                <!-- CARD 2 (SEJAJAR): 160x300 Skyscraper (8d98dc3a7f4b6bd50ef2586fe3c3198b) -->
+                <div class="lg:col-span-5 bg-slate-900 border border-slate-800 rounded-3xl p-6 flex flex-col justify-between items-center text-center relative glow-gold">
+                    <div class="w-full pb-3 border-b border-slate-800 mb-3 flex items-center justify-between">
+                        <span class="text-[10px] bg-amber-500/20 text-amber-300 font-bold px-2 py-0.5 rounded uppercase">IKLAN SPONSOR 2 (160x300)</span>
+                        <span class="text-xs font-extrabold text-amber-400 bg-slate-950 px-2.5 py-1 rounded-lg border border-slate-800">Reward: Rp 1.000 - Rp 2.500</span>
                     </div>
-                    <p class="text-xs text-slate-400 mb-4">
-                        Posisikan klik Anda pada iklan sponsor di bawah untuk mengaktifkan fitur skip timer atau melipatgandakan saldo reward secara nyata:
-                    </p>
 
-                    <!-- TWO ADS ALIGNED SEJAJAR (SIDE-BY-SIDE FLEX/GRID) -->
-                    <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 items-stretch">
-                        
-                        <!-- AD UNIT 1: 300x250 Medium Rectangle (afdec985419475c346c2f6feb2d89c7d) -->
-                        <div class="sm:col-span-7 bg-slate-950 border border-slate-800 rounded-2xl p-3 flex flex-col items-center justify-between text-center">
-                            <span class="text-[9px] bg-emerald-500/20 text-emerald-300 font-bold px-2 py-0.5 rounded uppercase tracking-wider mb-2">⚡ Booster 1: Skip Timer 15s</span>
-                            
-                            <div class="overflow-hidden rounded-xl border border-slate-800 bg-slate-900 p-1 shadow-inner">
-                                <script>
-                                  atOptions = {
-                                    'key' : 'afdec985419475c346c2f6feb2d89c7d',
-                                    'format' : 'iframe',
-                                    'height' : 250,
-                                    'width' : 300,
-                                    'params' : {}
-                                  };
-                                </script>
-                                <script src="https://dcengg.org/22/afdec985419475c346c2f6feb2d89c7d"></script>
-                            </div>
-
-                            <!-- Interactive Click Feature Button -->
-                            <button onclick="handleAdClick('booster_skip', 500, 'Skip Timer & Bonus Rp 500')" class="w-full mt-2.5 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-extrabold text-xs py-2 px-3 rounded-xl shadow-md transition transform hover:scale-[1.02]">
-                                👉 Klik Iklan 300x250 Ini (+500)
-                            </button>
-                        </div>
-
-                        <!-- AD UNIT 2: 160x300 Skyscraper (8d98dc3a7f4b6bd50ef2586fe3c3198b) -->
-                        <div class="sm:col-span-5 bg-slate-950 border border-slate-800 rounded-2xl p-3 flex flex-col items-center justify-between text-center">
-                            <span class="text-[9px] bg-amber-500/20 text-amber-300 font-bold px-2 py-0.5 rounded uppercase tracking-wider mb-2">🔥 Booster 2: Double 2X</span>
-                            
-                            <div class="overflow-hidden rounded-xl border border-slate-800 bg-slate-900 p-1 shadow-inner">
-                                <script>
-                                  atOptions = {
-                                    'key' : '8d98dc3a7f4b6bd50ef2586fe3c3198b',
-                                    'format' : 'iframe',
-                                    'height' : 300,
-                                    'width' : 160,
-                                    'params' : {}
-                                  };
-                                </script>
-                                <script src="https://dcengg.org/22/8d98dc3a7f4b6bd50ef2586fe3c3198b"></script>
-                            </div>
-
-                            <!-- Interactive Click Feature Button -->
-                            <button onclick="handleAdClick('booster_double', 1000, 'Booster 2X Cuan Aktif (+Rp 1.000)')" class="w-full mt-2.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-extrabold text-xs py-2 px-2.5 rounded-xl shadow-md transition transform hover:scale-[1.02]">
-                                👉 Klik Iklan 2X (+1.000)
-                            </button>
-                        </div>
-
+                    <div class="my-auto overflow-hidden rounded-2xl border border-slate-800 bg-slate-950 p-2 shadow-inner">
+                        <script>
+                          atOptions = {
+                            'key' : '8d98dc3a7f4b6bd50ef2586fe3c3198b',
+                            'format' : 'iframe',
+                            'height' : 300,
+                            'width' : 160,
+                            'params' : {}
+                          };
+                        </script>
+                        <script src="https://dcengg.org/22/8d98dc3a7f4b6bd50ef2586fe3c3198b"></script>
                     </div>
+
+                    <button onclick="handleAdClick('ad_160x300_flash', 'Iklan Sponsor Skyscraper 160x300')" class="w-full mt-4 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-extrabold text-sm py-3 px-4 rounded-xl shadow-lg transition transform hover:scale-[1.02]">
+                        👉 KLIK IKLAN INI (Dapatkan Min Rp 1.000 - Maks Rp 2.500)
+                    </button>
                 </div>
 
             </div>
-        </div>
-    </section>
 
-    <!-- SECTION 2: ZONA MISI IKLAN SPONSOR SEJAJAR (3 CARDS SIDE-BY-SIDE) -->
-    <section id="misi-iklan" class="py-16 bg-slate-900 border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="text-center mb-12">
-                <span class="text-xs font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">Misi Klik Berhadiah</span>
-                <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-3 mb-3">Zona Misi Sponsor Sejajar</h2>
-                <p class="text-slate-400 text-xs sm:text-sm max-w-xl mx-auto">
-                    Semua iklan diposisikan sejajar dan memiliki fungsi klik khusus. Klik sponsor untuk membuka hadiah harian, mempercepat pencairan saldo, dan bonus saldo DANA.
-                </p>
-            </div>
-
-            <!-- 3 CARDS SEJAJAR (SIDE-BY-SIDE ON DESKTOP & TABLET) -->
+            <!-- 3 CARDS SEJAJAR (SIDE-BY-SIDE): 160x600, 468x60 + CONTAINER, DAN SPONSOR SMARTLINK -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
                 
-                <!-- CARD 1 (SEJAJAR): 160x600 Wide Skyscraper (62a6d93b3b9a44cc35b9f9a93b5f15a3) -->
-                <div class="bg-slate-950 border border-slate-800 rounded-3xl p-5 flex flex-col items-center justify-between text-center relative glow-emerald">
+                <!-- CARD 3 (SEJAJAR): 160x600 Wide Skyscraper (62a6d93b3b9a44cc35b9f9a93b5f15a3) -->
+                <div class="bg-slate-900 border border-slate-800 rounded-3xl p-5 flex flex-col items-center justify-between text-center relative glow-emerald">
                     <div class="w-full pb-3 border-b border-slate-800 mb-3">
-                        <span class="text-[10px] bg-amber-500/20 text-amber-300 font-extrabold px-2 py-0.5 rounded uppercase">Misi 1: Sponsor Sultan</span>
-                        <h4 class="text-sm font-bold text-white mt-1">Akses Penarikan Prioritas</h4>
-                        <p class="text-[11px] text-slate-400">Klik banner di bawah untuk verifikasi akun prioritas & dapatkan +Rp 1.000</p>
+                        <span class="text-[10px] bg-amber-500/20 text-amber-300 font-extrabold px-2 py-0.5 rounded uppercase">Sponsor Sultan (160x600)</span>
+                        <div class="text-xs font-bold text-white mt-1">Reward: Min Rp 1.000 - Maks Rp 2.500</div>
                     </div>
 
-                    <div class="my-auto overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 p-1.5 shadow-lg">
+                    <div class="my-auto overflow-hidden rounded-2xl border border-slate-800 bg-slate-950 p-1.5 shadow-lg">
                         <script>
                           atOptions = {
                             'key' : '62a6d93b3b9a44cc35b9f9a93b5f15a3',
@@ -487,22 +413,21 @@
                         <script src="https://dcengg.org/22/62a6d93b3b9a44cc35b9f9a93b5f15a3"></script>
                     </div>
 
-                    <button onclick="handleAdClick('misi_skyscraper_600', 1000, 'Akses Penarikan VIP Terbuka (+Rp 1.000)')" class="w-full mt-4 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-extrabold text-xs py-3 px-4 rounded-xl shadow-lg transition transform hover:scale-[1.02]">
-                        👉 KLIK SPONSOR SULTAN (+Rp 1.000)
+                    <button onclick="handleAdClick('ad_160x600', 'Sponsor Sultan 160x600')" class="w-full mt-4 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-extrabold text-xs py-3 px-4 rounded-xl shadow-lg transition transform hover:scale-[1.02]">
+                        👉 KLIK IKLAN SULTAN (Min Rp 1.000 - Maks Rp 2.500)
                     </button>
                 </div>
 
-                <!-- CARD 2 (SEJAJAR): 468x60 Banner + Container Ad (dcengg) -->
-                <div class="bg-slate-950 border border-slate-800 rounded-3xl p-5 flex flex-col items-center justify-between text-center relative glow-gold">
+                <!-- CARD 4 (SEJAJAR): 468x60 Banner + Container Ad (dcengg) -->
+                <div class="bg-slate-900 border border-slate-800 rounded-3xl p-5 flex flex-col items-center justify-between text-center relative glow-gold">
                     <div class="w-full pb-3 border-b border-slate-800 mb-3">
-                        <span class="text-[10px] bg-emerald-500/20 text-emerald-300 font-extrabold px-2 py-0.5 rounded uppercase">Misi 2: E-Wallet Mitra</span>
-                        <h4 class="text-sm font-bold text-white mt-1">Bonus Check-In Harian</h4>
-                        <p class="text-[11px] text-slate-400">Klik banner mitra untuk mengklaim bonus harian langsung ke saldo DANA Anda</p>
+                        <span class="text-[10px] bg-emerald-500/20 text-emerald-300 font-extrabold px-2 py-0.5 rounded uppercase">Banner Mitra & Container</span>
+                        <div class="text-xs font-bold text-white mt-1">Reward: Min Rp 1.000 - Maks Rp 2.500</div>
                     </div>
 
                     <div class="w-full my-auto space-y-4">
                         <!-- 468x60 Banner Ad -->
-                        <div class="overflow-hidden rounded-xl border border-slate-800 bg-slate-900 p-2 shadow-inner mx-auto max-w-full">
+                        <div class="overflow-hidden rounded-xl border border-slate-800 bg-slate-950 p-2 shadow-inner mx-auto max-w-full">
                             <span class="text-[9px] text-slate-500 uppercase mb-1 block">Banner Mitra (468x60)</span>
                             <script>
                               atOptions = {
@@ -517,34 +442,33 @@
                         </div>
 
                         <!-- Container Ad Unit -->
-                        <div class="p-3 bg-slate-900/90 border border-slate-800 rounded-2xl min-h-[90px] flex flex-col items-center justify-center">
+                        <div class="p-3 bg-slate-950/90 border border-slate-800 rounded-2xl min-h-[85px] flex flex-col items-center justify-center">
                             <span class="text-[9px] text-slate-400 uppercase font-semibold mb-1">Iklan Container Interaktif</span>
                             <div id="container-9c6818c03f1547954676e27f7f8b07ee"></div>
                         </div>
 
                         <!-- Direct Sponsor Smartlink Button -->
-                        <a href="https://demper.org/4/6705407964029137324caf2320288946" target="_blank" rel="noopener noreferrer" onclick="handleAdClick('misi_smartlink', 1500, 'Bonus Mitra Harian Diterima (+Rp 1.500)')" class="block w-full bg-gradient-to-r from-amber-500/25 via-emerald-500/25 to-amber-500/25 hover:from-amber-500/40 hover:to-emerald-500/40 border border-amber-500/50 rounded-xl p-3 text-center transition transform hover:scale-[1.02]">
+                        <a href="https://demper.org/4/6705407964029137324caf2320288946" target="_blank" rel="noopener noreferrer" onclick="handleAdClick('smartlink', 'Sponsor Smartlink Eksklusif')" class="block w-full bg-gradient-to-r from-amber-500/25 via-emerald-500/25 to-amber-500/25 hover:from-amber-500/40 hover:to-emerald-500/40 border border-amber-500/50 rounded-xl p-3 text-center transition transform hover:scale-[1.02]">
                             <span class="text-xs font-bold text-amber-300 flex items-center justify-center space-x-1.5">
-                                <span>⚡ Kunjungi Promo Eksklusif Sponsor (+Rp 1.500)</span>
+                                <span>⚡ Klik Penawaran Sponsor (Min Rp 1.000 - Maks Rp 2.500)</span>
                                 <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
                             </span>
                         </a>
                     </div>
 
-                    <button onclick="handleAdClick('misi_banner_468', 1500, 'Bonus Check-In Mitra Diterima (+Rp 1.500)')" class="w-full mt-4 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-extrabold text-xs py-3 px-4 rounded-xl shadow-lg transition transform hover:scale-[1.02]">
-                        👉 KLIK BANNER MITRA (+Rp 1.500)
+                    <button onclick="handleAdClick('ad_468x60', 'Banner Mitra 468x60')" class="w-full mt-4 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-extrabold text-xs py-3 px-4 rounded-xl shadow-lg transition transform hover:scale-[1.02]">
+                        👉 KLIK BANNER MITRA (Min Rp 1.000 - Maks Rp 2.500)
                     </button>
                 </div>
 
-                <!-- CARD 3 (SEJAJAR): 160x300 Skyscraper (8d98dc3a7f4b6bd50ef2586fe3c3198b) -->
-                <div class="bg-slate-950 border border-slate-800 rounded-3xl p-5 flex flex-col items-center justify-between text-center relative glow-emerald">
+                <!-- CARD 5 (SEJAJAR): 160x300 Skyscraper (8d98dc3a7f4b6bd50ef2586fe3c3198b) -->
+                <div class="bg-slate-900 border border-slate-800 rounded-3xl p-5 flex flex-col items-center justify-between text-center relative glow-emerald">
                     <div class="w-full pb-3 border-b border-slate-800 mb-3">
-                        <span class="text-[10px] bg-blue-500/20 text-blue-300 font-extrabold px-2 py-0.5 rounded uppercase">Misi 3: Sponsor Flash</span>
-                        <h4 class="text-sm font-bold text-white mt-1">Klaim Saldo Tambahan</h4>
-                        <p class="text-[11px] text-slate-400">Klik iklan sponsor flash ini untuk langsung memasukkan reward Rp 500 ke dompet</p>
+                        <span class="text-[10px] bg-blue-500/20 text-blue-300 font-extrabold px-2 py-0.5 rounded uppercase">Sponsor Spesial (160x300)</span>
+                        <div class="text-xs font-bold text-white mt-1">Reward: Min Rp 1.000 - Maks Rp 2.500</div>
                     </div>
 
-                    <div class="my-auto overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 p-1.5 shadow-lg">
+                    <div class="my-auto overflow-hidden rounded-2xl border border-slate-800 bg-slate-950 p-1.5 shadow-lg">
                         <script>
                           atOptions = {
                             'key' : '8d98dc3a7f4b6bd50ef2586fe3c3198b',
@@ -557,8 +481,241 @@
                         <script src="https://dcengg.org/22/8d98dc3a7f4b6bd50ef2586fe3c3198b"></script>
                     </div>
 
-                    <button onclick="handleAdClick('misi_flash', 500, 'Saldo Flash Reward Berhasil Masuk (+Rp 500)')" class="w-full mt-4 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-extrabold text-xs py-3 px-4 rounded-xl shadow-lg transition transform hover:scale-[1.02]">
-                        👉 KLIK SPONSOR FLASH (+Rp 500)
+                    <button onclick="handleAdClick('ad_160x300_special', 'Sponsor Spesial 160x300')" class="w-full mt-4 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-extrabold text-xs py-3 px-4 rounded-xl shadow-lg transition transform hover:scale-[1.02]">
+                        👉 KLIK SPONSOR SPESIAL (Min Rp 1.000 - Maks Rp 2.500)
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: SISTEM BAGIKAN REFERRAL DAPATKAN RP 15.000 -->
+    <section id="referral" class="py-14 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 border-b border-slate-800 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <div class="bg-gradient-to-r from-amber-500/10 via-slate-900 to-emerald-500/10 border-2 border-amber-500/30 rounded-3xl p-6 sm:p-10 shadow-2xl relative glow-gold">
+                <div class="text-center mb-8">
+                    <span class="text-xs font-extrabold uppercase tracking-wider text-amber-300 bg-amber-500/20 px-3 py-1 rounded-full border border-amber-500/40">
+                        🎁 Program Referral Cuan Terbesar
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-3 mb-2">
+                        Bagikan Link Referral & Dapatkan <span class="text-amber-400">Rp 15.000</span> Per Teman!
+                    </h2>
+                    <p class="text-slate-300 text-xs sm:text-sm max-w-xl mx-auto">
+                        Ajak teman, keluarga, atau bagikan ke grup WhatsApp Anda. Setiap kali ada 1 teman yang bergabung dan menautkan akun E-Wallet, Anda langsung mendapatkan bonus <strong class="text-emerald-400 font-extrabold">Rp 15.000</strong> ke saldo Anda!
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+                    <!-- Referral Link & Code Box -->
+                    <div class="md:col-span-7 bg-slate-950 border border-slate-800 rounded-2xl p-5 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <label class="block text-xs font-bold text-slate-400">Kode Referral Unik Akun Anda:</label>
+                            <span class="text-[10px] text-amber-400 font-semibold bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20">
+                                Unik Per Akun
+                            </span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="bg-slate-900 border border-amber-500/40 text-amber-400 font-mono font-extrabold text-base px-4 py-2 rounded-xl" id="referral-code-display">KC-PRAS-8282</span>
+                            <button onclick="copyReferralCode()" class="bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs px-3 py-2 rounded-xl border border-slate-700 transition">
+                                Salin Kode
+                            </button>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-400 mb-1">Link Undangan Anda:</label>
+                            <div class="flex items-center space-x-2">
+                                <input type="text" id="referral-link-input" readonly value="https://klikcuan.id/?ref=KC-PRAS-8282" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-300 font-mono select-all">
+                                <button onclick="copyReferralLink()" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs px-4 py-2 rounded-xl transition flex-shrink-0">
+                                    📋 Salin
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Share to WhatsApp Button -->
+                        <div class="pt-1">
+                            <button onclick="shareToWhatsApp()" class="w-full bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-extrabold text-xs py-3 rounded-xl shadow-lg transition flex items-center justify-center space-x-2">
+                                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z"/></svg>
+                                <span>Bagikan ke WhatsApp (+Rp 15.000/teman)</span>
+                            </button>
+                        </div>
+
+                        <!-- Form Masukkan Kode Referral Teman (+Rp 5.000) -->
+                        <div class="pt-3 border-t border-slate-900">
+                            <div class="flex items-center justify-between mb-2">
+                                <label class="text-[11px] font-bold text-slate-300 flex items-center gap-1.5">
+                                    <span>🎟️ Punya Kode Referral Teman?</span>
+                                    <span class="text-[9px] bg-emerald-500/20 text-emerald-300 font-extrabold px-1.5 py-0.2 rounded">+Rp 5.000</span>
+                                </label>
+                                <span class="text-[9px] text-slate-400">Proteksi 1 HP 1 Akun</span>
+                            </div>
+                            <form onsubmit="handleRedeemReferralSubmit(event)" class="flex gap-2">
+                                <input type="text" id="redeem-ref-code-input" placeholder="Contoh: KC-BUDI-3921" class="flex-1 bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white font-mono uppercase focus:outline-none focus:border-amber-500">
+                                <button type="submit" class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-extrabold text-xs px-3.5 py-2 rounded-xl shadow-md transition whitespace-nowrap">
+                                    Klaim Bonus
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Live Referral Counter & Invited Friends List -->
+                    <div class="md:col-span-5 bg-slate-950 border border-slate-800 rounded-2xl p-5 text-center space-y-4">
+                        <div>
+                            <span class="text-xs text-slate-400 uppercase font-semibold">Statistik Undangan Anda</span>
+                            <div class="text-3xl font-extrabold text-amber-400 mt-1 mb-0.5" id="referral-total-count">2 Teman</div>
+                            <div class="text-xs text-slate-400">Total Bonus Didapat: <strong class="text-emerald-400" id="referral-total-bonus">Rp 30.000</strong></div>
+                        </div>
+
+                        <!-- 1-Click Simulation Button -->
+                        <button onclick="simulateReferralJoin()" class="w-full bg-slate-800 hover:bg-slate-700 border border-amber-500/30 text-amber-300 font-bold text-xs py-2.5 rounded-xl transition">
+                            ⚡ Simulasikan 1 Teman Bergabung (+Rp 15.000)
+                        </button>
+
+                        <!-- Dynamic Invited Friends Table -->
+                        <div class="text-left pt-2 border-t border-slate-900">
+                            <div class="flex justify-between items-center text-[11px] mb-2">
+                                <span class="font-bold text-white">Teman Terundang (1 HP Valid):</span>
+                                <span class="text-[9px] text-emerald-400 font-mono" id="referral-active-device-tag">Anti-Tuyul Aktif</span>
+                            </div>
+                            <div id="referral-friends-list" class="space-y-2 max-h-48 overflow-y-auto pr-1 text-xs">
+                                <!-- Rendered dynamically via JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: TAUTKAN AKUN E-WALLET (DANA, OVO, GOPAY) -->
+    <section id="tautkan-ewallet" class="py-14 bg-slate-950 border-b border-slate-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10">
+                <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Integrasi Pembayaran Resmi</span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-3 mb-2">Tautkan Akun E-Wallet (DANA, OVO, GoPay)</h2>
+                <p class="text-slate-400 text-xs sm:text-sm max-w-2xl mx-auto">
+                    Tautkan dompet digital Anda di bawah ini agar saldo otomatis dicairkan tanpa perlu memasukkan nomor setiap kali melakukan penarikan. Dapatkan <strong class="text-amber-400">Bonus Saldo +Rp 2.500</strong> saat pertama kali menautkan!
+                </p>
+            </div>
+
+            <!-- 3 E-WALLET CARDS ALIGNED SEJAJAR (SIDE-BY-SIDE) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+                
+                <!-- CARD 1: DANA -->
+                <div class="bg-slate-900 border border-blue-500/30 rounded-3xl p-6 flex flex-col justify-between relative glow-dana">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-2.5">
+                                <div class="w-10 h-10 rounded-2xl bg-blue-600 flex items-center justify-center text-white font-extrabold text-base shadow-lg shadow-blue-600/30">
+                                    D
+                                </div>
+                                <div>
+                                    <h3 class="text-base font-bold text-white">DANA</h3>
+                                    <span class="text-[10px] text-blue-400 font-semibold">Dompet Digital Indonesia</span>
+                                </div>
+                            </div>
+                            <span id="card-badge-dana" class="text-[10px] bg-emerald-500/20 text-emerald-400 font-extrabold px-2 py-0.5 rounded-full border border-emerald-500/30 flex items-center gap-1">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                                <span>TERHUBUNG</span>
+                            </span>
+                        </div>
+
+                        <div class="bg-slate-950 border border-slate-800 rounded-2xl p-3.5 mb-4 space-y-1 text-xs">
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Nomor Akun:</span>
+                                <span class="font-mono font-bold text-white" id="card-num-dana">0812-3456-7890</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Nama Pemilik:</span>
+                                <span class="text-slate-300" id="card-name-dana">a.n Budi Santoso</span>
+                            </div>
+                            <div class="flex justify-between pt-1 border-t border-slate-800/80">
+                                <span class="text-slate-400">Kecepatan Cair:</span>
+                                <span class="text-emerald-400 font-bold">Instan (1-5 Menit)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="openLinkWalletModal('DANA')" class="w-full bg-slate-800 hover:bg-slate-700 text-blue-400 font-bold py-2.5 rounded-xl text-xs border border-blue-500/30 transition" id="card-btn-dana">
+                        Ubah Nomor DANA
+                    </button>
+                </div>
+
+                <!-- CARD 2: OVO -->
+                <div class="bg-slate-900 border border-purple-500/30 rounded-3xl p-6 flex flex-col justify-between relative glow-ovo">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-2.5">
+                                <div class="w-10 h-10 rounded-2xl bg-purple-700 flex items-center justify-center text-white font-extrabold text-base shadow-lg shadow-purple-700/30">
+                                    O
+                                </div>
+                                <div>
+                                    <h3 class="text-base font-bold text-white">OVO</h3>
+                                    <span class="text-[10px] text-purple-400 font-semibold">OVO Cash & Points</span>
+                                </div>
+                            </div>
+                            <span id="card-badge-ovo" class="text-[10px] bg-slate-800 text-slate-400 font-bold px-2 py-0.5 rounded-full border border-slate-700">
+                                BELUM TERTAUT
+                            </span>
+                        </div>
+
+                        <div class="bg-slate-950 border border-slate-800 rounded-2xl p-3.5 mb-4 space-y-1 text-xs">
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Nomor Akun:</span>
+                                <span class="font-mono text-slate-400" id="card-num-ovo">Belum ditautkan</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Nama Pemilik:</span>
+                                <span class="text-slate-400" id="card-name-ovo">-</span>
+                            </div>
+                            <div class="flex justify-between pt-1 border-t border-slate-800/80">
+                                <span class="text-slate-400">Bonus Penautan:</span>
+                                <span class="text-amber-400 font-bold">+Rp 2.500 Saldo</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="openLinkWalletModal('OVO')" class="w-full bg-purple-700 hover:bg-purple-600 text-white font-bold py-2.5 rounded-xl text-xs shadow-lg shadow-purple-700/30 transition" id="card-btn-ovo">
+                        + Tautkan OVO Sekarang
+                    </button>
+                </div>
+
+                <!-- CARD 3: GOPAY -->
+                <div class="bg-slate-900 border border-cyan-500/30 rounded-3xl p-6 flex flex-col justify-between relative glow-gopay">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-2.5">
+                                <div class="w-10 h-10 rounded-2xl bg-cyan-600 flex items-center justify-center text-white font-extrabold text-base shadow-lg shadow-cyan-600/30">
+                                    G
+                                </div>
+                                <div>
+                                    <h3 class="text-base font-bold text-white">GoPay</h3>
+                                    <span class="text-[10px] text-cyan-400 font-semibold">GoPay Indonesia</span>
+                                </div>
+                            </div>
+                            <span id="card-badge-gopay" class="text-[10px] bg-slate-800 text-slate-400 font-bold px-2 py-0.5 rounded-full border border-slate-700">
+                                BELUM TERTAUT
+                            </span>
+                        </div>
+
+                        <div class="bg-slate-950 border border-slate-800 rounded-2xl p-3.5 mb-4 space-y-1 text-xs">
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Nomor Akun:</span>
+                                <span class="font-mono text-slate-400" id="card-num-gopay">Belum ditautkan</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Nama Pemilik:</span>
+                                <span class="text-slate-400" id="card-name-gopay">-</span>
+                            </div>
+                            <div class="flex justify-between pt-1 border-t border-slate-800/80">
+                                <span class="text-slate-400">Bonus Penautan:</span>
+                                <span class="text-amber-400 font-bold">+Rp 2.500 Saldo</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="openLinkWalletModal('GoPay')" class="w-full bg-cyan-600 hover:bg-cyan-500 text-white font-bold py-2.5 rounded-xl text-xs shadow-lg shadow-cyan-600/30 transition" id="card-btn-gopay">
+                        + Tautkan GoPay Sekarang
                     </button>
                 </div>
 
@@ -567,42 +724,42 @@
     </section>
 
     <!-- CALCULATOR SECTION -->
-    <section id="kalkulator" class="py-16 bg-slate-950 border-b border-slate-800">
+    <section id="kalkulator" class="py-14 bg-slate-900 border-b border-slate-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6">
             <div class="text-center mb-10">
                 <span class="text-xs font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">Kalkulator Potensi Cuan</span>
                 <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-3 mb-3">Berapa Penghasilan yang Bisa Anda Dapatkan?</h2>
-                <p class="text-slate-400 text-xs sm:text-sm max-w-xl mx-auto">Geser slider di bawah untuk menghitung potensi penghasilan harian dan bulanan Anda.</p>
+                <p class="text-slate-400 text-xs sm:text-sm max-w-xl mx-auto">Geser slider di bawah untuk menghitung potensi klik iklan dan pencairan dana minimal Rp 100.000.</p>
             </div>
 
-            <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl">
+            <div class="bg-slate-950 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl">
                 <div class="mb-6">
                     <div class="flex justify-between items-center mb-2.5">
-                        <label for="ad-slider" class="text-xs sm:text-sm font-bold text-white">Jumlah Iklan Ditonton Per Hari:</label>
-                        <span id="slider-count" class="text-lg sm:text-xl font-extrabold text-amber-400 bg-slate-950 px-3 py-1 rounded-xl border border-slate-800">20 Iklan</span>
+                        <label for="ad-slider" class="text-xs sm:text-sm font-bold text-white">Jumlah Klik Iklan Per Hari:</label>
+                        <span id="slider-count" class="text-lg sm:text-xl font-extrabold text-amber-400 bg-slate-900 px-3 py-1 rounded-xl border border-slate-800">20 Klik</span>
                     </div>
-                    <input id="ad-slider" type="range" min="5" max="100" value="20" step="5" class="w-full h-2.5 bg-slate-950 rounded-lg appearance-none cursor-pointer accent-emerald-500">
+                    <input id="ad-slider" type="range" min="5" max="100" value="20" step="5" class="w-full h-2.5 bg-slate-900 rounded-lg appearance-none cursor-pointer accent-emerald-500">
                     <div class="flex justify-between text-[11px] text-slate-500 mt-1.5">
-                        <span>5 Iklan</span>
-                        <span>50 Iklan</span>
-                        <span>100 Iklan</span>
+                        <span>5 Klik</span>
+                        <span>50 Klik</span>
+                        <span>100 Klik</span>
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 text-center">
-                    <div class="bg-slate-950 border border-slate-800 rounded-2xl p-4">
-                        <div class="text-[10px] text-slate-400 uppercase font-semibold mb-0.5">Per Hari</div>
-                        <div id="calc-daily" class="text-xl sm:text-2xl font-extrabold text-emerald-400">Rp 10.000</div>
-                        <div class="text-[10px] text-slate-500 mt-0.5">20 × Rp 500</div>
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4">
+                        <div class="text-[10px] text-slate-400 uppercase font-semibold mb-0.5">Per Hari (Rata-rata)</div>
+                        <div id="calc-daily" class="text-xl sm:text-2xl font-extrabold text-emerald-400">Rp 35.000</div>
+                        <div class="text-[10px] text-slate-500 mt-0.5">20 × Rp 1.750</div>
                     </div>
-                    <div class="bg-slate-950 border border-slate-800 rounded-2xl p-4">
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4">
                         <div class="text-[10px] text-slate-400 uppercase font-semibold mb-0.5">Per Bulan (30 Hari)</div>
-                        <div id="calc-monthly" class="text-xl sm:text-2xl font-extrabold text-amber-400">Rp 300.000</div>
-                        <div class="text-[10px] text-slate-500 mt-0.5">Belum termasuk bonus misi</div>
+                        <div id="calc-monthly" class="text-xl sm:text-2xl font-extrabold text-amber-400">Rp 1.050.000</div>
+                        <div class="text-[10px] text-slate-500 mt-0.5">Belum termasuk bonus referral</div>
                     </div>
-                    <div class="bg-slate-950 border border-slate-800 rounded-2xl p-4">
-                        <div class="text-[10px] text-slate-400 uppercase font-semibold mb-0.5">Waktu Capai Rp 50.000</div>
-                        <div id="calc-days-needed" class="text-xl sm:text-2xl font-extrabold text-white">5 Hari</div>
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4">
+                        <div class="text-[10px] text-slate-400 uppercase font-semibold mb-0.5">Waktu Capai Rp 100.000</div>
+                        <div id="calc-days-needed" class="text-xl sm:text-2xl font-extrabold text-white">3 Hari</div>
                         <div class="text-[10px] text-slate-500 mt-0.5">Untuk minimal penarikan</div>
                     </div>
                 </div>
@@ -610,45 +767,8 @@
         </div>
     </section>
 
-    <!-- CARA KERJA SECTION -->
-    <section id="cara-kerja" class="py-16 bg-slate-900 border-b border-slate-800">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="text-center mb-12">
-                <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Panduan Sederhana</span>
-                <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-3 mb-3">4 Langkah Mudah Menghasilkan Cuan</h2>
-                <p class="text-slate-400 text-xs sm:text-sm max-w-xl mx-auto">Tidak perlu modal dan tidak perlu keahlian khusus. Semua orang bisa mulai sekarang juga dari ponsel Android.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 sm:gap-6">
-                <div class="bg-slate-950 border border-slate-800 rounded-2xl p-5 relative">
-                    <div class="w-9 h-9 rounded-xl bg-emerald-500/20 text-emerald-400 font-extrabold flex items-center justify-center text-base mb-3">1</div>
-                    <h3 class="text-sm font-bold text-white mb-1.5">Pasang APK CuanNonton</h3>
-                    <p class="text-xs text-slate-400 leading-relaxed">Unduh file APK resmi dan pasang di ponsel Android Anda secara gratis.</p>
-                </div>
-
-                <div class="bg-slate-950 border border-slate-800 rounded-2xl p-5 relative">
-                    <div class="w-9 h-9 rounded-xl bg-emerald-500/20 text-emerald-400 font-extrabold flex items-center justify-center text-base mb-3">2</div>
-                    <h3 class="text-sm font-bold text-white mb-1.5">Masuk Akun Pengguna</h3>
-                    <p class="text-xs text-slate-400 leading-relaxed">Masuk atau daftarkan akun e-wallet Anda. Saldo dan riwayat Anda tersimpan aman.</p>
-                </div>
-
-                <div class="bg-slate-950 border border-slate-800 rounded-2xl p-5 relative">
-                    <div class="w-9 h-9 rounded-xl bg-emerald-500/20 text-emerald-400 font-extrabold flex items-center justify-center text-base mb-3">3</div>
-                    <h3 class="text-sm font-bold text-white mb-1.5">Tonton Iklan & Klik Sponsor</h3>
-                    <p class="text-xs text-slate-400 leading-relaxed">Tonton video sponsor selama 15 detik atau klik banner sponsor untuk melipatgandakan reward.</p>
-                </div>
-
-                <div class="bg-slate-950 border border-slate-800 rounded-2xl p-5 relative">
-                    <div class="w-9 h-9 rounded-xl bg-emerald-500/20 text-emerald-400 font-extrabold flex items-center justify-center text-base mb-3">4</div>
-                    <h3 class="text-sm font-bold text-white mb-1.5">Tarik Mulai Rp 50.000</h3>
-                    <p class="text-xs text-slate-400 leading-relaxed">Setelah mencapai minimal Rp 50.000, cairkan langsung ke DANA, GoPay, OVO, atau Rekening Bank.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- FAQ SECTION -->
-    <section id="faq" class="py-16 bg-slate-950">
+    <section id="faq" class="py-14 bg-slate-950">
         <div class="max-w-3xl mx-auto px-4 sm:px-6">
             <div class="text-center mb-10">
                 <span class="text-xs font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">Pertanyaan Umum</span>
@@ -658,41 +778,31 @@
             <div class="space-y-3.5">
                 <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 sm:p-5 cursor-pointer" onclick="toggleFaq(1)">
                     <div class="flex justify-between items-center">
-                        <h4 class="text-sm sm:text-base font-bold text-white">Berapa lama iklan harus ditonton?</h4>
+                        <h4 class="text-sm sm:text-base font-bold text-white">Berapa reward yang didapatkan per klik iklan?</h4>
                         <span id="faq-icon-1" class="text-emerald-400 text-lg font-bold">+</span>
                     </div>
                     <p id="faq-ans-1" class="hidden text-xs sm:text-sm text-slate-400 mt-2.5 pt-2.5 border-t border-slate-800 leading-relaxed">
-                        Iklan berdurasi tepat 15 detik. Selama timer berjalan, tombol klaim dikunci dan akan otomatis aktif setelah 15 detik berakhir untuk memastikan reward Rp 500 valid masuk ke akun Anda. Anda juga bisa mengklik sponsor untuk mempercepat waktu tunggu.
+                        Setiap klik iklan sponsor memberikan reward antara <strong>Min. Rp 1.000 s/d Maks. Rp 2.500</strong> yang langsung otomatis masuk ke saldo rekening akun Anda tanpa perlu menunggu video.
                     </p>
                 </div>
 
                 <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 sm:p-5 cursor-pointer" onclick="toggleFaq(2)">
                     <div class="flex justify-between items-center">
-                        <h4 class="text-sm sm:text-base font-bold text-white">Berapa batas minimal penarikan dana?</h4>
+                        <h4 class="text-sm sm:text-base font-bold text-white">Bagaimana cara mendapatkan bonus referral Rp 15.000?</h4>
                         <span id="faq-icon-2" class="text-emerald-400 text-lg font-bold">+</span>
                     </div>
                     <p id="faq-ans-2" class="hidden text-xs sm:text-sm text-slate-400 mt-2.5 pt-2.5 border-t border-slate-800 leading-relaxed">
-                        Batas minimal penarikan adalah Rp 50.000. Anda juga dapat memilih nominal Rp 75.000, Rp 100.000, Rp 150.000, hingga Rp 250.000 setelah saldo terkumpul.
+                        Salin link referral Anda atau klik tombol "Bagikan ke WhatsApp". Ketika teman mendaftar dan menautkan E-Wallet, Anda akan langsung menerima bonus <strong>Rp 15.000</strong> per orang tanpa batas maksimal teman!
                     </p>
                 </div>
 
                 <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 sm:p-5 cursor-pointer" onclick="toggleFaq(3)">
                     <div class="flex justify-between items-center">
-                        <h4 class="text-sm sm:text-base font-bold text-white">Metode pembayaran apa saja yang tersedia?</h4>
+                        <h4 class="text-sm sm:text-base font-bold text-white">Berapa batas minimal penarikan dana?</h4>
                         <span id="faq-icon-3" class="text-emerald-400 text-lg font-bold">+</span>
                     </div>
                     <p id="faq-ans-3" class="hidden text-xs sm:text-sm text-slate-400 mt-2.5 pt-2.5 border-t border-slate-800 leading-relaxed">
-                        Kami mendukung e-wallet populer di Indonesia seperti DANA, GoPay, OVO, ShopeePay, serta Transfer Bank lokal (BCA, BRI, Mandiri, BNI).
-                    </p>
-                </div>
-
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 sm:p-5 cursor-pointer" onclick="toggleFaq(4)">
-                    <div class="flex justify-between items-center">
-                        <h4 class="text-sm sm:text-base font-bold text-white">Apakah ada potongan biaya admin saat tarik dana?</h4>
-                        <span id="faq-icon-4" class="text-emerald-400 text-lg font-bold">+</span>
-                    </div>
-                    <p id="faq-ans-4" class="hidden text-xs sm:text-sm text-slate-400 mt-2.5 pt-2.5 border-t border-slate-800 leading-relaxed">
-                        100% Gratis! Tidak ada biaya admin sama sekali. Jika Anda menarik Rp 50.000, maka saldo utuh Rp 50.000 yang akan masuk ke e-wallet Anda.
+                        Batas minimal penarikan adalah <strong>Rp 100.000</strong>. Anda juga dapat memilih nominal Rp 150.000, Rp 200.000, Rp 250.000, hingga Rp 500.000 yang langsung cair ke akun DANA, OVO, atau GoPay Anda tanpa potongan biaya admin (100% Gratis).
                     </p>
                 </div>
             </div>
@@ -703,7 +813,7 @@
     <div class="max-w-5xl mx-auto px-4 my-8 flex flex-col items-center justify-center">
         <div class="flex items-center space-x-2 mb-1.5">
             <span class="text-[9px] bg-emerald-500/20 text-emerald-300 font-extrabold px-2 py-0.5 rounded uppercase tracking-wider">Sponsor Penutup</span>
-            <span class="text-[10px] text-slate-400">👉 Klik banner ini untuk percepat proses transfer ke E-Wallet Anda</span>
+            <span class="text-[10px] text-slate-300">👉 Klik banner di bawah untuk dapatkan <strong class="text-emerald-400">Rp 1.000 - Rp 2.500</strong></span>
         </div>
         <!-- Desktop 728x90 -->
         <div class="hidden md:flex justify-center overflow-hidden rounded-xl border border-slate-800 bg-slate-950 p-1.5 shadow-lg">
@@ -732,106 +842,321 @@
             <script src="https://dcengg.org/22/86e28ac6312132540ab2e3a1fe071501"></script>
         </div>
 
-        <button onclick="handleAdClick('bottom_banner', 500, 'Validasi Transfer Sponsor Sukses (+Rp 500)')" class="mt-2 text-xs font-bold text-emerald-400 hover:text-emerald-300 underline">
-            ⚡ Klik Banner Sponsor & Tambah Saldo +Rp 500
+        <button onclick="handleAdClick('bottom_banner', 'Banner Sponsor Penutup')" class="mt-2 text-xs font-bold text-emerald-400 hover:text-emerald-300 underline">
+            ⚡ Klik Banner Sponsor & Tambah Saldo (Min Rp 1.000 - Maks Rp 2.500)
         </button>
     </div>
-
-    <!-- CALL TO ACTION BANNER -->
-    <section class="py-16 bg-gradient-to-r from-emerald-900/60 via-slate-900 to-slate-900 border-t border-slate-800">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-2xl sm:text-4xl font-extrabold text-white mb-3">Mulai Hasilkan Cuan Pertama Anda Hari Ini!</h2>
-            <p class="text-slate-300 text-xs sm:text-sm max-w-xl mx-auto mb-6">
-                Tonton iklan 15 detik, kumpulkan saldo hingga Rp 50.000, dan cairkan langsung ke DANA atau GoPay Anda sekarang.
-            </p>
-            <button onclick="openDownloadModal()" class="bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-extrabold px-8 py-3.5 rounded-xl shadow-xl shadow-amber-500/20 text-sm transition transform hover:-translate-y-0.5">
-                📲 Unduh CuanNonton APK Sekarang
-            </button>
-        </div>
-    </section>
 
     <!-- FOOTER -->
     <footer class="py-8 bg-slate-950 border-t border-slate-800/80 text-center text-xs text-slate-500">
         <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div class="flex items-center space-x-2">
                 <img src="/images/reward_coin.jpg" class="w-5 h-5 rounded-full object-cover">
-                <span class="font-bold text-slate-400">CuanNonton Indonesia</span>
+                <span class="font-bold text-slate-400">KlikCuan Indonesia</span>
             </div>
             <div>
-                © 2026 CuanNonton. Semua hak cipta dilindungi.
+                © 2026 KlikCuan. Platform Klik Iklan Berhadiah Saldo DANA, OVO & GoPay.
             </div>
             <div class="flex space-x-4">
                 <a href="#faq" class="hover:underline">Bantuan</a>
-                <a href="#" onclick="openDownloadModal(); return false;" class="hover:underline">Unduh APK</a>
-                <a href="#" onclick="openLoginModal(); return false;" class="hover:underline">Login Akun</a>
+                <a href="#" onclick="openProfileModal('summary'); return false;" class="hover:underline">Profil Akun</a>
+                <a href="#" onclick="openGmailLoginModal(); return false;" class="hover:underline">Masuk Gmail</a>
             </div>
         </div>
     </footer>
 
-    <!-- MODAL 1: SISTEM LOGIN & REGISTER (SIMULASI NYATA) -->
-    <div id="login-modal" class="fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+    <!-- MODAL 1: GMAIL INSTANT LOGIN -->
+    <div id="gmail-login-modal" class="fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-sm flex items-center justify-center p-4 hidden">
         <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-md w-full p-6 text-center relative shadow-2xl glow-emerald">
-            <button onclick="closeLoginModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+            <button onclick="closeGmailLoginModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
 
-            <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-emerald-500 to-amber-400 flex items-center justify-center mx-auto mb-3 shadow-lg text-slate-950 text-xl font-extrabold">
-                🔑
+            <div class="w-14 h-14 rounded-2xl bg-white flex items-center justify-center mx-auto mb-3 shadow-lg shadow-white/10">
+                <svg class="w-8 h-8" viewBox="0 0 24 24">
+                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                </svg>
             </div>
-            <h3 class="text-xl font-bold text-white mb-1">Masuk Akun CuanNonton</h3>
-            <p class="text-xs text-slate-400 mb-5">Simpan saldo hasil nonton iklan dan lakukan penarikan langsung ke E-Wallet Anda.</p>
+            
+            <h3 class="text-xl font-bold text-white mb-0.5">Masuk Akun KlikCuan</h3>
+            <p class="text-xs text-slate-400 mb-3">Tautkan akun Gmail Anda untuk mulai menghasilkan rupiah & menghubungkan E-Wallet.</p>
 
-            <!-- Quick 1-Click Login Options -->
-            <div class="space-y-2.5 mb-5">
-                <button onclick="loginQuickDemo()" class="w-full flex items-center justify-center space-x-2 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-bold py-3 rounded-xl shadow-lg transition">
-                    <span>✨ Masuk Cepat Akun Demo (Budi Santoso - Rp 48.500)</span>
-                </button>
+            <!-- Detected Device Hardware Card in Login Modal -->
+            <div class="mb-4 p-3 bg-slate-950 border border-slate-800 rounded-2xl text-left text-xs space-y-1">
+                <div class="flex items-center justify-between">
+                    <span class="text-slate-300 font-bold flex items-center gap-1.5">
+                        <span>📱 Perangkat:</span>
+                        <strong id="login-modal-device-name" class="text-white">Samsung Galaxy (Android)</strong>
+                    </span>
+                    <span class="text-[9px] bg-emerald-500/20 text-emerald-300 font-extrabold px-1.5 py-0.2 rounded border border-emerald-500/30">1 HP 1 AKUN</span>
+                </div>
+                <div class="text-[10px] text-slate-400 font-mono" id="login-modal-device-id">Hardware ID: DEV-HP-8421-9AF3</div>
+                <div class="text-[10px] text-amber-300 pt-1 border-t border-slate-900 flex items-center gap-1">
+                    <span>🛡️</span>
+                    <span>Sistem Anti-Manipulasi mengunci 1 ponsel hanya untuk 1 akun agar saldo Anda aman.</span>
+                </div>
+            </div>
 
-                <button onclick="loginGoogleSimulated()" class="w-full flex items-center justify-center space-x-2 bg-white hover:bg-slate-100 text-slate-900 font-bold py-2.5 rounded-xl transition">
+            <div class="space-y-2.5 mb-4">
+                <button onclick="loginWithPresetGmail('prasbae8282@gmail.com', 'Prasetyo')" class="w-full flex items-center justify-center space-x-2.5 bg-white hover:bg-slate-100 text-slate-900 font-bold py-3 rounded-xl transition text-xs shadow-md">
                     <svg class="w-4 h-4" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
-                    <span>Masuk dengan Google (Simulasi)</span>
+                    <span>Masuk sebagai: <strong>prasbae8282@gmail.com</strong></span>
+                </button>
+
+                <button onclick="loginWithPresetGmail('budi.santoso@gmail.com', 'Budi Santoso')" class="w-full flex items-center justify-center space-x-2 bg-slate-800 hover:bg-slate-700 text-amber-400 font-bold py-2.5 rounded-xl border border-slate-700 text-xs transition">
+                    <span>👤 Masuk Akun Uji: <strong>budi.santoso@gmail.com</strong></span>
                 </button>
             </div>
 
-            <div class="relative flex py-2 items-center mb-4">
+            <div class="relative flex py-2 items-center mb-3">
                 <div class="flex-grow border-t border-slate-800"></div>
-                <span class="flex-shrink mx-3 text-[10px] text-slate-500 uppercase font-semibold">Atau Masukkan Data E-Wallet</span>
+                <span class="flex-shrink mx-3 text-[10px] text-slate-500 uppercase font-semibold">Atau Ketik Alamat Gmail Anda</span>
                 <div class="flex-grow border-t border-slate-800"></div>
             </div>
 
-            <!-- Custom Form Inputs -->
-            <form onsubmit="handleCustomLogin(event)" class="text-left space-y-3">
+            <form onsubmit="handleCustomGmailLogin(event)" class="text-left space-y-3">
                 <div>
-                    <label class="block text-[11px] font-bold text-slate-300 mb-1">Nama Lengkap</label>
-                    <input type="text" id="login-input-name" required placeholder="Contoh: Budi Santoso" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-500">
+                    <label class="block text-[11px] font-bold text-slate-300 mb-1">Alamat Gmail</label>
+                    <input type="email" id="gmail-custom-input" required placeholder="namaanda@gmail.com" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-500">
                 </div>
 
-                <div class="grid grid-cols-2 gap-2">
-                    <div>
-                        <label class="block text-[11px] font-bold text-slate-300 mb-1">E-Wallet Penarikan</label>
-                        <select id="login-input-wallet" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-500">
-                            <option value="DANA">DANA</option>
-                            <option value="GoPay">GoPay</option>
-                            <option value="OVO">OVO</option>
-                            <option value="ShopeePay">ShopeePay</option>
-                            <option value="BCA">Bank BCA</option>
-                            <option value="BRI">Bank BRI</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-[11px] font-bold text-slate-300 mb-1">Nomor HP / Rekening</label>
-                        <input type="text" id="login-input-number" required placeholder="081234567890" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-500">
-                    </div>
+                <div>
+                    <label class="block text-[11px] font-bold text-slate-300 mb-1">Nama Panggilan</label>
+                    <input type="text" id="gmail-custom-name" placeholder="Contoh: Pratama" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-500">
                 </div>
 
-                <button type="submit" class="w-full mt-4 bg-slate-800 hover:bg-slate-700 text-amber-400 font-bold py-2.5 rounded-xl border border-slate-700 text-xs transition">
-                    Simpan & Mulai Hasilkan Uang
+                <button type="submit" class="w-full bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-extrabold py-3 rounded-xl shadow-lg text-xs transition">
+                    Tautkan Gmail & Kunci ke HP Ini
                 </button>
             </form>
         </div>
     </div>
 
-    <!-- MODAL 2: TARIK SALDO REALISTIS DENGAN RESI PENARIKAN -->
+    <!-- MODAL: ANTI-FRAUD / 1 HP 1 AKUN DETECTION -->
+    <div id="device-anti-fraud-modal" class="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4 hidden">
+        <div class="bg-slate-900 border-2 border-red-500/40 rounded-3xl max-w-md w-full p-6 text-center relative shadow-2xl">
+            <button onclick="closeAntiFraudModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+
+            <div class="w-16 h-16 rounded-3xl bg-red-500/20 border border-red-500/30 text-red-400 flex items-center justify-center mx-auto mb-3 shadow-lg">
+                <svg class="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+            </div>
+
+            <span class="text-[10px] font-extrabold uppercase tracking-wider text-red-400 bg-red-500/10 px-3 py-1 rounded-full border border-red-500/30">
+                ⚠️ Sistem Anti-Fraud & Anti-Tuyul Aktif
+            </span>
+
+            <h3 class="text-xl font-extrabold text-white mt-3 mb-2">Akses Ditolak: 1 HP Hanya 1 Akun!</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                Ponsel ini (<strong id="af-device-name" class="text-amber-400">Samsung Galaxy</strong> - ID: <span id="af-device-id" class="font-mono text-slate-300">DEV-HP-XXXX</span>) telah terikat secara permanen dengan akun: <strong id="af-bound-email" class="text-emerald-400">prasbae8282@gmail.com</strong>.
+            </p>
+
+            <div class="p-3 bg-slate-950 border border-slate-800 rounded-2xl text-left text-xs space-y-2 mb-4">
+                <div class="flex items-center gap-2 text-slate-300">
+                    <span class="text-red-400 font-bold">✕</span>
+                    <span>Dilarang membuat banyak akun di ponsel yang sama.</span>
+                </div>
+                <div class="flex items-center gap-2 text-slate-300">
+                    <span class="text-red-400 font-bold">✕</span>
+                    <span>Manipulasi referral & kloning saldo diblokir otomatis.</span>
+                </div>
+                <div class="flex items-center gap-2 text-emerald-400">
+                    <span class="font-bold">✓</span>
+                    <span>Setiap ponsel hanya sah mengumpulkan rupiah untuk 1 akun.</span>
+                </div>
+            </div>
+
+            <div class="space-y-2">
+                <button onclick="loginWithBoundAccount()" class="w-full bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-extrabold py-3 rounded-xl shadow-lg text-xs transition">
+                    Masuk Kembali ke Akun Asli HP Ini (<span id="af-btn-email">prasbae8282@gmail.com</span>)
+                </button>
+                <button onclick="closeAntiFraudModal()" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold py-2.5 rounded-xl text-xs transition">
+                    Tutup
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 2: TAUTKAN AKUN E-WALLET (DANA, OVO, GOPAY) -->
+    <div id="link-wallet-modal" class="fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-md w-full p-6 text-center relative shadow-2xl glow-emerald">
+            <button onclick="closeLinkWalletModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+
+            <div id="link-wallet-icon" class="w-12 h-12 rounded-2xl bg-blue-600 flex items-center justify-center mx-auto mb-2 text-white text-xl font-extrabold shadow-lg">
+                D
+            </div>
+            
+            <h3 class="text-xl font-bold text-white mb-0.5" id="link-wallet-title">Tautkan Akun DANA</h3>
+            <p class="text-xs text-slate-400 mb-4" id="link-wallet-subtitle">Hubungkan nomor HP DANA Anda untuk pencairan saldo otomatis tanpa potongan.</p>
+
+            <form onsubmit="handleLinkWalletSubmit(event)" class="text-left space-y-3">
+                <input type="hidden" id="link-wallet-type" value="DANA">
+
+                <div>
+                    <label class="block text-[11px] font-bold text-slate-300 mb-1">Nomor HP Terdaftar di E-Wallet</label>
+                    <input type="tel" id="link-wallet-phone" required placeholder="Contoh: 081234567890" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-500 font-mono">
+                </div>
+
+                <div>
+                    <label class="block text-[11px] font-bold text-slate-300 mb-1">Nama Pemilik Akun E-Wallet</label>
+                    <input type="text" id="link-wallet-name" required placeholder="Contoh: Budi Santoso" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-500">
+                </div>
+
+                <!-- OTP Simulation Block -->
+                <div class="bg-slate-950 border border-slate-800 rounded-xl p-3 text-xs space-y-2">
+                    <div class="flex justify-between items-center">
+                        <span class="text-slate-400 font-semibold">Verifikasi Kode OTP:</span>
+                        <button type="button" onclick="autoFillOtp()" class="text-amber-400 hover:underline font-bold text-[10px]">
+                            ⚡ Isi OTP Otomatis: 8829
+                        </button>
+                    </div>
+                    <input type="text" id="link-wallet-otp" maxlength="4" placeholder="Masukkan 4 digit OTP" class="w-full bg-slate-900 border border-slate-800 rounded-lg px-3 py-2 text-center text-sm font-mono tracking-widest text-emerald-400 focus:outline-none focus:border-emerald-500">
+                </div>
+
+                <div class="p-2.5 bg-amber-500/10 border border-amber-500/30 rounded-xl text-[11px] text-amber-300 flex items-center gap-2">
+                    <span>🎁</span>
+                    <span>Bonus penautan pertama <strong>+Rp 2.500</strong> akan langsung ditambahkan ke saldo akun Anda!</span>
+                </div>
+
+                <button type="submit" class="w-full bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-extrabold py-3 rounded-xl shadow-lg text-xs transition">
+                    Konfirmasi & Tautkan Sekarang
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL 3: PROFIL AKUN & RIWAYAT -->
+    <div id="profile-modal" class="fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-xl w-full p-6 text-center relative shadow-2xl glow-emerald max-h-[92vh] overflow-y-auto">
+            <button onclick="closeProfileModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+
+            <div class="flex items-center space-x-4 pb-4 border-b border-slate-800 mb-4 text-left">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-emerald-500 to-amber-400 text-slate-950 flex items-center justify-center font-extrabold text-2xl shadow-lg" id="profile-modal-avatar">
+                    B
+                </div>
+                <div class="flex-1">
+                    <div class="flex items-center space-x-2">
+                        <h3 class="text-lg font-bold text-white" id="profile-modal-name">Budi Santoso</h3>
+                        <span class="text-[10px] bg-emerald-500/20 text-emerald-300 font-extrabold px-2 py-0.5 rounded-full border border-emerald-500/30">GMAIL AKTIF</span>
+                    </div>
+                    <div class="text-xs text-slate-400 mt-0.5" id="profile-modal-email">prasbae8282@gmail.com</div>
+                    <div class="text-[11px] text-amber-400 font-semibold mt-0.5" id="profile-modal-member-date">Member sejak: 08 Nov 2026</div>
+                </div>
+            </div>
+
+            <div class="flex bg-slate-950 border border-slate-800 rounded-xl p-1 mb-4 text-xs font-bold">
+                <button id="p-tab-btn-summary" onclick="switchProfileTab('summary')" class="flex-1 py-2 rounded-lg bg-emerald-600 text-white">Ringkasan</button>
+                <button id="p-tab-btn-history" onclick="switchProfileTab('history')" class="flex-1 py-2 rounded-lg text-slate-400 hover:text-white">Riwayat Transaksi</button>
+            </div>
+
+            <!-- TAB 1: SUMMARY & STATS -->
+            <div id="p-tab-summary" class="space-y-4">
+                <div class="grid grid-cols-2 gap-3 text-left">
+                    <div class="bg-slate-950 border border-slate-800 rounded-2xl p-4">
+                        <span class="text-[10px] text-slate-400 uppercase font-semibold">Total Saldo Tersedia</span>
+                        <div class="text-2xl font-extrabold text-emerald-400 mt-1" id="profile-stat-balance">Rp 48.500</div>
+                        <span class="text-[10px] text-emerald-400/80">Min. penarikan Rp 100.000</span>
+                    </div>
+
+                    <div class="bg-slate-950 border border-slate-800 rounded-2xl p-4">
+                        <span class="text-[10px] text-slate-400 uppercase font-semibold">Total Ditarik (Cair)</span>
+                        <div class="text-2xl font-extrabold text-amber-400 mt-1" id="profile-stat-withdrawn">Rp 0</div>
+                        <span class="text-[10px] text-slate-400">0 Transaksi Penarikan</span>
+                    </div>
+                </div>
+
+                <!-- Status E-Wallet di Profil -->
+                <div class="bg-slate-950 border border-slate-800 rounded-2xl p-4 text-left space-y-2 text-xs">
+                    <div class="font-bold text-white mb-2 flex items-center justify-between">
+                        <span>Status E-Wallet Tertaut:</span>
+                        <button onclick="closeProfileModal(); scrollToEwalletSection();" class="text-amber-400 hover:underline text-[11px]">Kelola E-Wallet</button>
+                    </div>
+                    <div class="flex justify-between items-center py-1 border-b border-slate-900">
+                        <span class="text-slate-300 font-bold text-blue-400">DANA</span>
+                        <span id="profile-wallet-status-dana" class="font-mono text-slate-200">0812-3456-7890 (✓ Terhubung)</span>
+                    </div>
+                    <div class="flex justify-between items-center py-1 border-b border-slate-900">
+                        <span class="text-slate-300 font-bold text-purple-400">OVO</span>
+                        <span id="profile-wallet-status-ovo" class="text-slate-500 font-mono">Belum ditautkan</span>
+                    </div>
+                    <div class="flex justify-between items-center py-1">
+                        <span class="text-slate-300 font-bold text-cyan-400">GoPay</span>
+                        <span id="profile-wallet-status-gopay" class="text-slate-500 font-mono">Belum ditautkan</span>
+                    </div>
+                </div>
+
+                <!-- Status Keamanan Perangkat & Anti-Manipulasi 1 HP 1 Akun -->
+                <div class="bg-slate-950 border border-slate-800 rounded-2xl p-4 text-left space-y-2 text-xs">
+                    <div class="font-bold text-white mb-1 flex items-center justify-between">
+                        <span class="flex items-center gap-1.5">
+                            <span>🛡️ Keamanan 1 HP 1 Akun:</span>
+                            <span class="text-[9px] bg-emerald-500/20 text-emerald-300 font-extrabold px-1.5 py-0.2 rounded border border-emerald-500/30">TERIKAT</span>
+                        </span>
+                        <span class="text-[10px] text-emerald-400 font-bold">Anti-Tuyul Aktif</span>
+                    </div>
+                    <div class="flex justify-between items-center py-1 border-b border-slate-900 text-slate-300">
+                        <span>Perangkat HP Terdaftar</span>
+                        <span id="profile-device-name" class="font-bold text-white">Samsung Galaxy (Android)</span>
+                    </div>
+                    <div class="flex justify-between items-center py-1 border-b border-slate-900 text-slate-300">
+                        <span>Hardware Device ID</span>
+                        <span id="profile-device-id" class="font-mono text-amber-400 text-[11px]">DEV-HP-8421-9AF3</span>
+                    </div>
+                    <div class="flex justify-between items-center py-1 border-b border-slate-900 text-slate-300">
+                        <span>Kode Referral Unik Akun</span>
+                        <span id="profile-user-refcode" class="font-mono text-emerald-400 font-extrabold text-[11px]">KC-PRAS-8282</span>
+                    </div>
+                    <div class="pt-1 flex items-center justify-between text-[10px] text-slate-400">
+                        <span>1 Ponsel hanya boleh memiliki 1 akun aktif.</span>
+                        <button onclick="resetDeviceBindingDemo()" class="text-slate-500 hover:text-amber-400 underline">
+                            Reset Binding (Uji Coba)
+                        </button>
+                    </div>
+                </div>
+
+                <div class="flex gap-2">
+                    <button onclick="closeProfileModal(); openWithdrawModal();" class="flex-1 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-extrabold text-xs py-3 rounded-xl shadow-md transition">
+                        💸 Tarik Saldo (Min. 100rb)
+                    </button>
+                    <button onclick="closeProfileModal(); scrollToAdClickSection();" class="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs py-3 rounded-xl shadow-md transition">
+                        ⚡ Klik Iklan Cuan (+1rb - 2.5rb)
+                    </button>
+                </div>
+            </div>
+
+            <!-- TAB 2: TRANSACTION HISTORY -->
+            <div id="p-tab-history" class="hidden text-left space-y-2">
+                <div class="flex justify-between items-center text-xs text-slate-400 pb-1 border-b border-slate-800">
+                    <span>Catatan Aktivitas Akun</span>
+                    <span id="history-total-count" class="font-bold text-emerald-400">3 Catatan</span>
+                </div>
+
+                <div id="history-list-container" class="space-y-2 max-h-64 overflow-y-auto pr-1">
+                    <!-- Populated dynamically via JavaScript -->
+                </div>
+            </div>
+
+            <div class="pt-4 mt-4 border-t border-slate-800 flex justify-between items-center text-xs">
+                <button onclick="logoutUser()" class="text-red-400 hover:text-red-300 font-bold flex items-center gap-1">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clip-rule="evenodd"/></svg>
+                    <span>Keluar dari Akun Ini</span>
+                </button>
+                <button onclick="closeProfileModal()" class="bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold px-4 py-1.5 rounded-xl transition">
+                    Tutup
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 4: PENARIKAN SALDO DENGAN MINIMAL RP 100.000 -->
     <div id="withdraw-modal" class="fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-sm flex items-center justify-center p-4 hidden">
         <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-md w-full p-6 text-center relative shadow-2xl glow-emerald">
             <button onclick="closeWithdrawModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white">
@@ -843,45 +1168,49 @@
                 <div class="w-12 h-12 rounded-2xl bg-amber-500/20 border border-amber-500/40 text-amber-400 flex items-center justify-center mx-auto mb-3 text-2xl font-extrabold">
                     💸
                 </div>
-                <h3 class="text-xl font-bold text-white mb-0.5">Penarikan Saldo CuanNonton</h3>
-                <p class="text-xs text-slate-400 mb-4">Cairkan saldo Anda ke rekening E-Wallet terdaftar tanpa potongan biaya admin.</p>
+                <h3 class="text-xl font-bold text-white mb-0.5">Penarikan Saldo KlikCuan</h3>
+                <p class="text-xs text-slate-400 mb-4">Cairkan saldo Anda ke DANA, OVO, atau GoPay tertaut tanpa potongan biaya admin.</p>
 
                 <div class="bg-slate-950 border border-slate-800 rounded-2xl p-3.5 text-left mb-4">
-                    <div class="flex justify-between items-center text-xs">
-                        <span class="text-slate-400">Saldo Tersedia:</span>
+                    <div class="flex justify-between items-center text-xs mb-2">
+                        <span class="text-slate-400">Saldo Akun Anda:</span>
                         <span class="font-extrabold text-emerald-400 text-base" id="withdraw-balance-display">Rp 48.500</span>
                     </div>
-                    <div class="flex justify-between items-center text-xs mt-1 pt-1 border-t border-slate-800/80">
-                        <span class="text-slate-400">Tujuan Pencairan:</span>
-                        <span class="font-bold text-white" id="withdraw-destination-display">DANA (0812-****-7890)</span>
+
+                    <!-- Destination E-Wallet Selector -->
+                    <div class="pt-2 border-t border-slate-800/80">
+                        <label class="block text-[11px] font-bold text-slate-300 mb-1.5">Pilih E-Wallet Tujuan Pencairan:</label>
+                        <div class="space-y-1.5" id="withdraw-wallet-selector">
+                            <!-- Populated dynamically via JS based on linked wallets -->
+                        </div>
                     </div>
                 </div>
 
                 <div class="text-left mb-4">
-                    <label class="block text-xs font-bold text-slate-300 mb-1.5">Pilih Nominal Penarikan (Min. Rp 50.000):</label>
+                    <label class="block text-xs font-bold text-slate-300 mb-1.5">Pilih Nominal Penarikan (Min. Rp 100.000):</label>
                     <div class="grid grid-cols-2 gap-2 text-xs">
-                        <button type="button" onclick="selectWithdrawNominal(50000)" class="withdraw-nom-btn bg-emerald-500/20 border-2 border-emerald-500 text-emerald-300 font-bold p-2.5 rounded-xl transition" data-amount="50000">
-                            Rp 50.000 (Minimal)
-                        </button>
-                        <button type="button" onclick="selectWithdrawNominal(75000)" class="withdraw-nom-btn bg-slate-950 border border-slate-800 text-slate-300 font-bold p-2.5 rounded-xl transition" data-amount="75000">
-                            Rp 75.000
-                        </button>
-                        <button type="button" onclick="selectWithdrawNominal(100000)" class="withdraw-nom-btn bg-slate-950 border border-slate-800 text-slate-300 font-bold p-2.5 rounded-xl transition" data-amount="100000">
-                            Rp 100.000
+                        <button type="button" onclick="selectWithdrawNominal(100000)" class="withdraw-nom-btn bg-emerald-500/20 border-2 border-emerald-500 text-emerald-300 font-bold p-2.5 rounded-xl transition" data-amount="100000">
+                            Rp 100.000 (Minimal)
                         </button>
                         <button type="button" onclick="selectWithdrawNominal(150000)" class="withdraw-nom-btn bg-slate-950 border border-slate-800 text-slate-300 font-bold p-2.5 rounded-xl transition" data-amount="150000">
                             Rp 150.000
+                        </button>
+                        <button type="button" onclick="selectWithdrawNominal(200000)" class="withdraw-nom-btn bg-slate-950 border border-slate-800 text-slate-300 font-bold p-2.5 rounded-xl transition" data-amount="200000">
+                            Rp 200.000
+                        </button>
+                        <button type="button" onclick="selectWithdrawNominal(250000)" class="withdraw-nom-btn bg-slate-950 border border-slate-800 text-slate-300 font-bold p-2.5 rounded-xl transition" data-amount="250000">
+                            Rp 250.000
                         </button>
                     </div>
                 </div>
 
                 <!-- Insufficient balance warning / button to add demo balance -->
                 <div id="withdraw-warning" class="hidden bg-amber-500/10 border border-amber-500/30 rounded-xl p-3 text-left mb-4 text-xs text-amber-300">
-                    <div class="font-bold mb-1">⚠️ Saldo Belum Mencukupi</div>
-                    <div id="withdraw-warning-text">Saldo Anda Rp 48.500. Syarat minimal penarikan adalah Rp 50.000.</div>
-                    <div class="mt-2 flex gap-2">
-                        <button onclick="addDemoBalance50k()" class="bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold px-3 py-1.5 rounded-lg text-[11px] transition">
-                            + Tambah Rp 50.000 (Mode Demo)
+                    <div class="font-bold mb-1">⚠️ Saldo Belum Mencapai Batas Minimal</div>
+                    <div id="withdraw-warning-text">Batas minimal penarikan adalah Rp 100.000. Kumpulkan saldo dengan klik iklan (Rp 1.000 - Rp 2.500) atau undang teman (+Rp 15.000)!</div>
+                    <div class="mt-2.5 flex gap-2">
+                        <button onclick="addDemoBalance100k()" class="bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold px-3 py-1.5 rounded-lg text-[11px] transition">
+                            + Tambah Rp 100.000 (Simulasi Uji Coba)
                         </button>
                     </div>
                 </div>
@@ -894,7 +1223,7 @@
             <!-- Loading Spinner State -->
             <div id="withdraw-loading-view" class="py-8 text-center hidden">
                 <div class="w-14 h-14 border-4 border-emerald-500/30 border-t-emerald-400 rounded-full animate-spin mx-auto mb-4"></div>
-                <h4 class="text-base font-bold text-white mb-1">Menghubungkan ke Gateway E-Wallet...</h4>
+                <h4 class="text-base font-bold text-white mb-1" id="withdraw-loading-status">Menghubungkan ke Gateway E-Wallet...</h4>
                 <p class="text-xs text-slate-400 max-w-xs mx-auto">Memvalidasi saldo dan memproses pengiriman dana otomatis tanpa potongan biaya admin.</p>
             </div>
 
@@ -909,11 +1238,11 @@
                 <div class="bg-slate-950 border border-slate-800 rounded-2xl p-4 text-left text-xs space-y-2 mb-5">
                     <div class="flex justify-between">
                         <span class="text-slate-400">ID Transaksi:</span>
-                        <span class="font-mono font-bold text-white" id="receipt-trx-id">TRX-CN-20268841</span>
+                        <span class="font-mono font-bold text-white" id="receipt-trx-id">TRX-KC-20268841</span>
                     </div>
                     <div class="flex justify-between">
                         <span class="text-slate-400">Tanggal & Waktu:</span>
-                        <span class="text-white" id="receipt-date">08 Nov 2026, 11:45 WIB</span>
+                        <span class="text-white" id="receipt-date">08 Nov 2026, 12:45 WIB</span>
                     </div>
                     <div class="flex justify-between">
                         <span class="text-slate-400">Metode Penarikan:</span>
@@ -921,11 +1250,11 @@
                     </div>
                     <div class="flex justify-between">
                         <span class="text-slate-400">No. Rekening / HP:</span>
-                        <span class="font-mono text-white" id="receipt-account">081234567890</span>
+                        <span class="font-mono text-white" id="receipt-account">0812-3456-7890</span>
                     </div>
                     <div class="flex justify-between">
                         <span class="text-slate-400">Jumlah Penarikan:</span>
-                        <span class="font-extrabold text-emerald-400 text-sm" id="receipt-amount">Rp 50.000</span>
+                        <span class="font-extrabold text-emerald-400 text-sm" id="receipt-amount">Rp 100.000</span>
                     </div>
                     <div class="flex justify-between">
                         <span class="text-slate-400">Biaya Admin:</span>
@@ -941,104 +1270,238 @@
                 </div>
 
                 <button onclick="closeWithdrawModal()" class="w-full bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 rounded-xl text-xs transition">
-                    Tutup Resi & Lanjutkan Nonton
+                    Tutup Resi & Lanjutkan Klik Iklan
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- MODAL 3: DOWNLOAD APK -->
-    <div id="download-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 hidden">
-        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-md w-full p-6 text-center relative shadow-2xl glow-emerald">
-            <button onclick="closeDownloadModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-            </button>
-
-            <img src="/images/app_icon.jpg" class="w-16 h-16 rounded-2xl mx-auto mb-3 shadow-lg object-cover">
-            <h3 class="text-xl font-bold text-white mb-1">Unduh CuanNonton APK</h3>
-            <p class="text-xs text-slate-400 mb-5">Versi 1.0.0 • Ukuran ±34 MB • Mendukung Android 7.0+</p>
-
-            <div class="bg-slate-950 border border-slate-800 rounded-xl p-3.5 text-left mb-6 text-xs space-y-2 text-slate-300">
-                <div class="font-bold text-amber-400 mb-1 flex items-center space-x-1.5">
-                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
-                    <span>Cara Pasang APK di HP:</span>
-                </div>
-                <div>1. Klik tombol <strong>"Unduh APK Sekarang"</strong>.</div>
-                <div>2. Jika muncul peringatan keamanan, pilih <strong>"Tetap Unduh / Download Anyway"</strong>.</div>
-                <div>3. Buka file APK lalu pilih <strong>"Instal"</strong> (Izinkan dari sumber ini jika diminta).</div>
-            </div>
-
-            <a href="/app-release.apk" onclick="showToast('Mengunduh APK CuanNonton... Pastikan izinkan instalasi di HP Anda.');" class="w-full inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-bold py-3.5 rounded-xl shadow-lg transition">
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
-                <span>Unduh APK Sekarang (Gratis)</span>
-            </a>
-        </div>
-    </div>
-
-    <!-- JAVASCRIPT APP STATE & CLICK ACTIONS -->
+    <!-- JAVASCRIPT STATE, REFERRAL & CLICK-TO-EARN ENGINE -->
     <script>
         // SPONSOR DESTINATION URL
         const SPONSOR_URL = "https://demper.org/4/6705407964029137324caf2320288946";
 
-        // SIMULATED USER STATE (Persisted in localStorage)
+        // LOCALSTORAGE KEYS (ANTI-MANIPULASI & PERSISTENSI)
+        const ACTIVE_SESSION_KEY = 'klikcuan_active_session';
+        const HARDWARE_DEVICE_ID_KEY = 'klikcuan_hardware_id';
+        const DEVICE_BINDING_KEY = 'klikcuan_device_binding';
+        const ACCOUNTS_DB_KEY = 'klikcuan_registered_accounts';
+
+        // 1. HARDWARE DEVICE DETECTOR & FINGERPRINT ENGINE
+        function getDeviceHardwareProfile() {
+            let devId = localStorage.getItem(HARDWARE_DEVICE_ID_KEY);
+            if (!devId) {
+                const randHex = Math.floor(Math.random() * 0xFFFFFF).toString(16).toUpperCase().padStart(6, '0');
+                const randNum = Math.floor(1000 + Math.random() * 9000);
+                devId = `DEV-HP-${randNum}-${randHex}`;
+                localStorage.setItem(HARDWARE_DEVICE_ID_KEY, devId);
+            }
+
+            const ua = navigator.userAgent || "";
+            let model = "Samsung Galaxy A54 (Android)";
+            if (/iPhone|iPad/i.test(ua)) {
+                model = "Apple iPhone (iOS 17)";
+            } else if (/SM-|Samsung/i.test(ua)) {
+                model = "Samsung Galaxy Series";
+            } else if (/Redmi|POCO|Xiaomi/i.test(ua)) {
+                model = "Xiaomi Redmi Note 12";
+            } else if (/CPH|RMX|OPPO|Realme/i.test(ua)) {
+                model = "OPPO Reno / Realme";
+            } else if (/vivo|V2/i.test(ua)) {
+                model = "Vivo Y Series (Android)";
+            } else if (/Infinix|Tecno/i.test(ua)) {
+                model = "Infinix Hot Series";
+            } else if (/Windows|Macintosh|Linux/i.test(ua)) {
+                // Testing on PC/Desktop browser
+                model = "Samsung Galaxy S23 (Emulasi HP)";
+            }
+
+            return {
+                id: devId,
+                model: model,
+                screen: `${window.screen.width || 390}x${window.screen.height || 844}`,
+                fingerprint: "HW-SEC-" + devId.replace(/[^A-Z0-9]/g, '')
+            };
+        }
+
+        const currentDevice = getDeviceHardwareProfile();
+
+        // 2. DEVICE BINDING MANAGEMENT (1 HP HANYA 1 AKUN - TIDAK DAPAT DIMANIPULASI)
+        function getDeviceBinding() {
+            try {
+                const raw = localStorage.getItem(DEVICE_BINDING_KEY);
+                if (raw) return JSON.parse(raw);
+            } catch (e) {
+                console.error(e);
+            }
+            return null;
+        }
+
+        function setDeviceBinding(email, name) {
+            const binding = {
+                deviceId: currentDevice.id,
+                deviceModel: currentDevice.model,
+                boundEmail: email,
+                boundName: name,
+                boundAt: new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' })
+            };
+            localStorage.setItem(DEVICE_BINDING_KEY, JSON.stringify(binding));
+            return binding;
+        }
+
+        // 3. GENERATOR KODE REFERRAL UNIK SETIAP AKUN (LEBIH REAL)
+        function generateUniqueReferralCode(email, name) {
+            const clean = (name || email.split('@')[0]).replace(/[^a-zA-Z]/g, '').toUpperCase();
+            const prefix = (clean.length >= 3 ? clean.substring(0, 4) : "CUAN").padEnd(4, 'X');
+            let hash = 0;
+            for (let i = 0; i < email.length; i++) {
+                hash = ((hash << 5) - hash) + email.charCodeAt(i);
+                hash |= 0;
+            }
+            const num = Math.abs(hash % 9000) + 1000;
+            return `KC-${prefix}-${num}`;
+        }
+
+        // 4. MULTI-ACCOUNT DATABASE SIMULATOR (Tersimpan rapi per akun)
+        function getAccountsDb() {
+            try {
+                const raw = localStorage.getItem(ACCOUNTS_DB_KEY);
+                if (raw) return JSON.parse(raw);
+            } catch (e) {
+                console.error(e);
+            }
+            return {};
+        }
+
+        function saveAccountToDb(user) {
+            if (!user || !user.email) return;
+            const db = getAccountsDb();
+            db[user.email] = user;
+            localStorage.setItem(ACCOUNTS_DB_KEY, JSON.stringify(db));
+        }
+
+        // INITIAL DEFAULT USER
         const DEFAULT_USER = {
-            isLoggedIn: true,
-            name: "Budi Santoso",
-            wallet: "DANA",
-            accountNumber: "0812-3456-7890",
+            email: "prasbae8282@gmail.com",
+            name: "Prasetyo",
             balance: 48500,
-            multiplier: 1,
-            adsWatched: 97
+            referralCount: 2,
+            referralCode: generateUniqueReferralCode("prasbae8282@gmail.com", "Prasetyo"),
+            claimedReferral: false,
+            adsClicked: 26,
+            totalWithdrawn: 0,
+            joinDate: "08 Nov 2026",
+            boundDeviceId: currentDevice.id,
+            activeWallet: "DANA",
+            wallets: {
+                DANA: { linked: true, number: "0812-3456-7890", name: "Budi Santoso" },
+                OVO: { linked: false, number: "", name: "" },
+                GoPay: { linked: false, number: "", name: "" }
+            },
+            referralFriends: [
+                { id: "RF-1", name: "Siti Rahmawati", device: "Xiaomi Redmi Note 12", refCode: "KC-SITI-4910", date: "08 Nov 2026", reward: "+Rp 15.000" },
+                { id: "RF-2", name: "Bambang Kurnia", device: "Samsung Galaxy A14", refCode: "KC-BAMB-7721", date: "07 Nov 2026", reward: "+Rp 15.000" }
+            ],
+            transactions: [
+                { id: "TX-101", date: "08 Nov 2026, 11:15 WIB", desc: "Bonus Referral Teman (Siti)", amount: "+Rp 15.000", type: "in" },
+                { id: "TX-102", date: "08 Nov 2026, 10:30 WIB", desc: "Klik Iklan Sponsor Sultan", amount: "+Rp 2.500", type: "in" },
+                { id: "TX-103", date: "07 Nov 2026, 19:20 WIB", desc: "Klik Iklan Display 300x250", amount: "+Rp 1.500", type: "in" }
+            ]
         };
 
-        let currentUser = loadUserSession();
-        let selectedWithdrawNominal = 50000;
-        let simTimerInterval = null;
-        let simSecondsLeft = 15;
+        // AUTO-INIT DEVICE BINDING FOR PRESET DEFAULT IF EMPTY
+        if (!getDeviceBinding()) {
+            setDeviceBinding(DEFAULT_USER.email, DEFAULT_USER.name);
+        }
 
-        function loadUserSession() {
+        // LOAD ACTIVE SESSION
+        function getActiveSession() {
             try {
-                const stored = localStorage.getItem('cuannonton_sim_user');
-                if (stored) {
-                    return JSON.parse(stored);
+                const session = localStorage.getItem(ACTIVE_SESSION_KEY);
+                if (session) {
+                    const parsed = JSON.parse(session);
+                    if (!parsed.referralCode) {
+                        parsed.referralCode = generateUniqueReferralCode(parsed.email, parsed.name);
+                    }
+                    if (!parsed.referralFriends) {
+                        parsed.referralFriends = DEFAULT_USER.referralFriends;
+                    }
+                    return parsed;
                 }
             } catch (e) {
                 console.error(e);
             }
+            localStorage.setItem(ACTIVE_SESSION_KEY, JSON.stringify(DEFAULT_USER));
+            saveAccountToDb(DEFAULT_USER);
             return { ...DEFAULT_USER };
         }
 
-        function saveUserSession() {
-            try {
-                localStorage.setItem('cuannonton_sim_user', JSON.stringify(currentUser));
-            } catch (e) {
-                console.error(e);
+        function saveActiveSession(user) {
+            if (user) {
+                localStorage.setItem(ACTIVE_SESSION_KEY, JSON.stringify(user));
+                saveAccountToDb(user);
+            } else {
+                localStorage.removeItem(ACTIVE_SESSION_KEY);
             }
             updateUiState();
         }
 
+        let currentUser = getActiveSession();
+        let selectedWithdrawNominal = 100000;
+        let selectedWithdrawWalletKey = "DANA";
+
+        // UI RENDER STATE
         function updateUiState() {
+            // Update Device Info Across UI
+            const devInfo = getDeviceHardwareProfile();
+            const devBinding = getDeviceBinding();
+
+            // Hero Card Device Tags
+            const heroDevName = document.getElementById('hero-device-name');
+            const heroDevId = document.getElementById('hero-device-id');
+            if (heroDevName) heroDevName.innerText = devInfo.model;
+            if (heroDevId) heroDevId.innerText = `ID: ${devInfo.id}`;
+
+            // Login Modal Device Info
+            const loginDevName = document.getElementById('login-modal-device-name');
+            const loginDevId = document.getElementById('login-modal-device-id');
+            if (loginDevName) loginDevName.innerText = devInfo.model;
+            if (loginDevId) loginDevId.innerText = `Hardware ID: ${devInfo.id}`;
+
+            // Profile Modal Device Info
+            const profileDevName = document.getElementById('profile-device-name');
+            const profileDevId = document.getElementById('profile-device-id');
+            const profileRefCode = document.getElementById('profile-user-refcode');
+            if (profileDevName) profileDevName.innerText = devInfo.model;
+            if (profileDevId) profileDevId.innerText = devInfo.id;
+            if (profileRefCode && currentUser) profileRefCode.innerText = currentUser.referralCode;
+
+            if (!currentUser) {
+                document.getElementById('nav-logged-in').classList.add('hidden');
+                document.getElementById('nav-logged-out').classList.remove('hidden');
+                document.getElementById('hero-user-name').innerText = "Pengunjung Web";
+                document.getElementById('hero-user-email').innerText = "Belum Ada Gmail Tertaut";
+                document.getElementById('hero-balance-text').innerText = "Rp 0";
+                document.getElementById('hero-progress-bar').style.width = "0%";
+                document.getElementById('hero-progress-text').innerText = "Masuk dengan Gmail untuk mulai mengumpulkan saldo.";
+                return;
+            }
+
             const formattedBalance = 'Rp ' + currentUser.balance.toLocaleString('id-ID');
-            const targetMin = 50000;
+            const targetMin = 100000;
             const pct = Math.min(100, Math.round((currentUser.balance / targetMin) * 100));
 
             // Nav Bar
-            const navLoggedOut = document.getElementById('nav-logged-out');
-            const navLoggedIn = document.getElementById('nav-logged-in');
-            if (currentUser.isLoggedIn) {
-                navLoggedOut.classList.add('hidden');
-                navLoggedIn.classList.remove('hidden');
-                document.getElementById('nav-user-name').innerText = currentUser.name;
-                document.getElementById('nav-user-avatar').innerText = currentUser.name.charAt(0).toUpperCase();
-                document.getElementById('nav-user-balance').innerText = formattedBalance;
-            } else {
-                navLoggedIn.classList.add('hidden');
-                navLoggedOut.classList.remove('hidden');
-            }
+            document.getElementById('nav-logged-out').classList.add('hidden');
+            document.getElementById('nav-logged-in').classList.remove('hidden');
+            document.getElementById('nav-user-name').innerText = currentUser.name;
+            document.getElementById('nav-user-avatar').innerText = currentUser.name.charAt(0).toUpperCase();
+            document.getElementById('nav-user-balance').innerText = formattedBalance;
 
             // Hero Card
             document.getElementById('hero-user-name').innerText = currentUser.name;
-            document.getElementById('hero-wallet-type').innerText = 'Tujuan: ' + currentUser.wallet + ' (' + currentUser.accountNumber + ')';
+            document.getElementById('hero-user-avatar').innerText = currentUser.name.charAt(0).toUpperCase();
+            document.getElementById('hero-user-email').innerText = currentUser.email;
             document.getElementById('hero-balance-text').innerText = formattedBalance;
             document.getElementById('hero-progress-bar').style.width = pct + '%';
             if (currentUser.balance >= targetMin) {
@@ -1048,17 +1511,221 @@
                 document.getElementById('hero-progress-text').innerText = pct + '% (Sisa Rp ' + remaining.toLocaleString('id-ID') + ')';
             }
 
-            // Simulator Current Multiplier Badge
-            const currentReward = 500 * currentUser.multiplier;
-            document.getElementById('sim-current-multiplier-badge').innerText = 'Rp ' + currentReward.toLocaleString('id-ID');
+            // Active wallet tag in hero
+            const activeW = currentUser.wallets[currentUser.activeWallet] || currentUser.wallets['DANA'];
+            if (activeW && activeW.linked) {
+                document.getElementById('hero-active-wallet-tag').innerText = `${currentUser.activeWallet}: ${activeW.number}`;
+            } else {
+                document.getElementById('hero-active-wallet-tag').innerText = "Belum Ada E-Wallet Tertaut";
+            }
+
+            // Referral Section stats (KODE REFERRAL UNIK PER AKUN)
+            const refCount = currentUser.referralCount || 0;
+            document.getElementById('referral-total-count').innerText = `${refCount} Teman`;
+            document.getElementById('referral-total-bonus').innerText = 'Rp ' + (refCount * 15000).toLocaleString('id-ID');
+            document.getElementById('referral-code-display').innerText = currentUser.referralCode;
+            document.getElementById('referral-link-input').value = `https://klikcuan.id/?ref=${currentUser.referralCode}`;
+
+            // Render Dynamic Invited Friends List
+            renderReferralFriendsList();
+
+            // Render 3 E-Wallet Cards Status (DANA, OVO, GOPAY)
+            renderEwalletCards();
+
+            // Profile Modal Header & Stats
+            document.getElementById('profile-modal-avatar').innerText = currentUser.name.charAt(0).toUpperCase();
+            document.getElementById('profile-modal-name').innerText = currentUser.name;
+            document.getElementById('profile-modal-email').innerText = currentUser.email;
+            document.getElementById('profile-modal-member-date').innerText = "Member sejak: " + (currentUser.joinDate || "08 Nov 2026");
+
+            document.getElementById('profile-stat-balance').innerText = formattedBalance;
+            document.getElementById('profile-stat-withdrawn').innerText = 'Rp ' + (currentUser.totalWithdrawn || 0).toLocaleString('id-ID');
+
+            // Render Transaction History
+            renderTransactionHistory();
 
             // Withdraw Modal fields
             document.getElementById('withdraw-balance-display').innerText = formattedBalance;
-            document.getElementById('withdraw-destination-display').innerText = currentUser.wallet + ' (' + currentUser.accountNumber + ')';
+            renderWithdrawWalletSelector();
+        }
+
+        // RENDER DYNAMIC INVITED FRIENDS TABLE
+        function renderReferralFriendsList() {
+            const container = document.getElementById('referral-friends-list');
+            if (!container) return;
+            const friends = currentUser.referralFriends || [];
+
+            if (friends.length === 0) {
+                container.innerHTML = '<div class="text-slate-500 text-[11px] py-2 text-center">Belum ada teman yang menggunakan link Anda. Bagikan sekarang (+Rp 15.000)!</div>';
+                return;
+            }
+
+            container.innerHTML = friends.map(f => `
+                <div class="bg-slate-900 border border-slate-800 rounded-xl p-2.5 flex items-center justify-between text-xs">
+                    <div>
+                        <div class="font-bold text-white flex items-center gap-1.5">
+                            <span>${f.name}</span>
+                            <span class="text-[9px] bg-slate-800 text-amber-300 font-mono px-1 py-0.2 rounded border border-slate-700">${f.refCode}</span>
+                        </div>
+                        <div class="text-[10px] text-slate-400">📱 ${f.device} • ${f.date}</div>
+                    </div>
+                    <div class="text-right">
+                        <div class="font-extrabold text-emerald-400">${f.reward}</div>
+                        <span class="text-[9px] bg-emerald-500/20 text-emerald-300 font-extrabold px-1.5 py-0.2 rounded">✓ 1 HP Valid</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // RENDER 3 E-WALLET CARDS (DANA, OVO, GOPAY)
+        function renderEwalletCards() {
+            const wallets = currentUser.wallets || {};
+
+            // DANA
+            const dana = wallets.DANA || { linked: false };
+            const badgeDana = document.getElementById('card-badge-dana');
+            const numDana = document.getElementById('card-num-dana');
+            const nameDana = document.getElementById('card-name-dana');
+            const btnDana = document.getElementById('card-btn-dana');
+            if (dana.linked) {
+                badgeDana.className = "text-[10px] bg-emerald-500/20 text-emerald-400 font-extrabold px-2 py-0.5 rounded-full border border-emerald-500/30 flex items-center gap-1";
+                badgeDana.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span><span>TERHUBUNG</span>`;
+                numDana.innerText = dana.number;
+                nameDana.innerText = 'a.n ' + dana.name;
+                btnDana.innerText = "Ubah Nomor DANA";
+                btnDana.className = "w-full bg-slate-800 hover:bg-slate-700 text-blue-400 font-bold py-2.5 rounded-xl text-xs border border-blue-500/30 transition";
+            } else {
+                badgeDana.className = "text-[10px] bg-slate-800 text-slate-400 font-bold px-2 py-0.5 rounded-full border border-slate-700";
+                badgeDana.innerText = "BELUM TERTAUT";
+                numDana.innerText = "Belum ditautkan";
+                nameDana.innerText = "-";
+                btnDana.innerText = "+ Tautkan DANA Sekarang";
+                btnDana.className = "w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-2.5 rounded-xl text-xs shadow-lg shadow-blue-600/30 transition";
+            }
+
+            // OVO
+            const ovo = wallets.OVO || { linked: false };
+            const badgeOvo = document.getElementById('card-badge-ovo');
+            const numOvo = document.getElementById('card-num-ovo');
+            const nameOvo = document.getElementById('card-name-ovo');
+            const btnOvo = document.getElementById('card-btn-ovo');
+            if (ovo.linked) {
+                badgeOvo.className = "text-[10px] bg-emerald-500/20 text-emerald-400 font-extrabold px-2 py-0.5 rounded-full border border-emerald-500/30 flex items-center gap-1";
+                badgeOvo.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span><span>TERHUBUNG</span>`;
+                numOvo.innerText = ovo.number;
+                nameOvo.innerText = 'a.n ' + ovo.name;
+                btnOvo.innerText = "Ubah Nomor OVO";
+                btnOvo.className = "w-full bg-slate-800 hover:bg-slate-700 text-purple-400 font-bold py-2.5 rounded-xl text-xs border border-purple-500/30 transition";
+            } else {
+                badgeOvo.className = "text-[10px] bg-slate-800 text-slate-400 font-bold px-2 py-0.5 rounded-full border border-slate-700";
+                badgeOvo.innerText = "BELUM TERTAUT";
+                numOvo.innerText = "Belum ditautkan";
+                nameOvo.innerText = "-";
+                btnOvo.innerText = "+ Tautkan OVO Sekarang";
+                btnOvo.className = "w-full bg-purple-700 hover:bg-purple-600 text-white font-bold py-2.5 rounded-xl text-xs shadow-lg shadow-purple-700/30 transition";
+            }
+
+            // GOPAY
+            const gopay = wallets.GoPay || { linked: false };
+            const badgeGopay = document.getElementById('card-badge-gopay');
+            const numGopay = document.getElementById('card-num-gopay');
+            const nameGopay = document.getElementById('card-name-gopay');
+            const btnGopay = document.getElementById('card-btn-gopay');
+            if (gopay.linked) {
+                badgeGopay.className = "text-[10px] bg-emerald-500/20 text-emerald-400 font-extrabold px-2 py-0.5 rounded-full border border-emerald-500/30 flex items-center gap-1";
+                badgeGopay.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span><span>TERHUBUNG</span>`;
+                numGopay.innerText = gopay.number;
+                nameGopay.innerText = 'a.n ' + gopay.name;
+                btnGopay.innerText = "Ubah Nomor GoPay";
+                btnGopay.className = "w-full bg-slate-800 hover:bg-slate-700 text-cyan-400 font-bold py-2.5 rounded-xl text-xs border border-cyan-500/30 transition";
+            } else {
+                badgeGopay.className = "text-[10px] bg-slate-800 text-slate-400 font-bold px-2 py-0.5 rounded-full border border-slate-700";
+                badgeGopay.innerText = "BELUM TERTAUT";
+                numGopay.innerText = "Belum ditautkan";
+                nameGopay.innerText = "-";
+                btnGopay.innerText = "+ Tautkan GoPay Sekarang";
+                btnGopay.className = "w-full bg-cyan-600 hover:bg-cyan-500 text-white font-bold py-2.5 rounded-xl text-xs shadow-lg shadow-cyan-600/30 transition";
+            }
+
+            // Update in Profile Modal
+            document.getElementById('profile-wallet-status-dana').innerText = dana.linked ? `${dana.number} (✓ Terhubung)` : "Belum ditautkan";
+            document.getElementById('profile-wallet-status-ovo').innerText = ovo.linked ? `${ovo.number} (✓ Terhubung)` : "Belum ditautkan";
+            document.getElementById('profile-wallet-status-gopay').innerText = gopay.linked ? `${gopay.number} (✓ Terhubung)` : "Belum ditautkan";
+        }
+
+        // RENDER WITHDRAW SELECTOR BASED ON LINKED WALLETS
+        function renderWithdrawWalletSelector() {
+            const container = document.getElementById('withdraw-wallet-selector');
+            const wallets = currentUser.wallets || {};
+            const keys = ['DANA', 'OVO', 'GoPay'];
+
+            const linkedKeys = keys.filter(k => wallets[k] && wallets[k].linked);
+
+            if (linkedKeys.length === 0) {
+                container.innerHTML = `
+                    <div class="p-2.5 bg-amber-500/10 border border-amber-500/30 rounded-xl text-amber-300 text-xs">
+                        Belum ada E-Wallet yang ditautkan.
+                        <button type="button" onclick="closeWithdrawModal(); scrollToEwalletSection();" class="block mt-1 font-bold underline text-amber-400">
+                            🔗 Tautkan DANA, OVO, atau GoPay Sekarang
+                        </button>
+                    </div>
+                `;
+                return;
+            }
+
+            if (!linkedKeys.includes(selectedWithdrawWalletKey)) {
+                selectedWithdrawWalletKey = linkedKeys[0];
+            }
+
+            container.innerHTML = linkedKeys.map(k => {
+                const w = wallets[k];
+                const isSelected = k === selectedWithdrawWalletKey;
+                const borderClass = isSelected ? "border-emerald-500 bg-emerald-500/10" : "border-slate-800 bg-slate-900";
+                return `
+                    <label class="flex items-center justify-between p-2.5 rounded-xl border ${borderClass} cursor-pointer transition" onclick="selectWithdrawWallet('${k}')">
+                        <div class="flex items-center space-x-2">
+                            <input type="radio" name="withdraw-wallet-choice" value="${k}" ${isSelected ? 'checked' : ''} class="accent-emerald-500">
+                            <span class="font-bold text-white text-xs">${k}</span>
+                            <span class="font-mono text-slate-300 text-xs">${w.number}</span>
+                        </div>
+                        <span class="text-[9px] bg-emerald-500/20 text-emerald-300 font-extrabold px-1.5 py-0.2 rounded">✓ TERHUBUNG</span>
+                    </label>
+                `;
+            }).join('');
+        }
+
+        function selectWithdrawWallet(k) {
+            selectedWithdrawWalletKey = k;
+            renderWithdrawWalletSelector();
+        }
+
+        function renderTransactionHistory() {
+            const container = document.getElementById('history-list-container');
+            const totalCount = document.getElementById('history-total-count');
+            const txs = currentUser.transactions || [];
+            totalCount.innerText = txs.length + " Catatan";
+
+            if (txs.length === 0) {
+                container.innerHTML = '<div class="text-xs text-slate-500 text-center py-4">Belum ada riwayat transaksi.</div>';
+                return;
+            }
+
+            container.innerHTML = txs.map(tx => `
+                <div class="bg-slate-900 border border-slate-800 rounded-xl p-2.5 flex justify-between items-center text-xs">
+                    <div>
+                        <div class="font-bold text-white">${tx.desc}</div>
+                        <div class="text-[10px] text-slate-400">${tx.date} • ID: ${tx.id}</div>
+                    </div>
+                    <div class="text-right">
+                        <div class="font-extrabold ${tx.type === 'in' ? 'text-emerald-400' : 'text-amber-400'}">${tx.amount}</div>
+                        <span class="text-[9px] bg-slate-800 text-slate-300 px-1.5 py-0.2 rounded">Berhasil</span>
+                    </div>
+                </div>
+            `).join('');
         }
 
         // TOAST NOTIFICATIONS
-        function showToast(message, type = 'success') {
+        function showToast(message) {
             const container = document.getElementById('toast-container');
             const toast = document.createElement('div');
             toast.className = "bg-slate-800 border border-slate-700 text-white text-xs font-bold px-4 py-3 rounded-xl shadow-2xl flex items-center gap-2 transform transition-all duration-300 pointer-events-auto";
@@ -1071,100 +1738,409 @@
             }, 3500);
         }
 
-        // AD CLICK INTERACTION HANDLER (Executes click feature & opens sponsor)
-        function handleAdClick(actionKey, rewardAmount, message) {
-            // Open sponsor in new tab
+        // AD CLICK INTERACTION HANDLER (REWARD MIN 1.000 S/D MAKS 2.500)
+        function handleAdClick(actionKey, adTitle) {
+            // Open sponsor destination
             window.open(SPONSOR_URL, '_blank', 'noopener,noreferrer');
 
-            // Execute specific feature
-            if (actionKey === 'booster_skip' || actionKey === 'skip_sponsor') {
-                // If simulator is playing, skip to 0
-                if (!document.getElementById('sim-playing-view').classList.contains('hidden')) {
-                    clearInterval(simTimerInterval);
-                    unlockSimClaimButton();
-                }
-            } else if (actionKey === 'booster_double') {
-                currentUser.multiplier = 2;
-                showToast('🔥 Booster 2X Cuan Aktif! Hadiah iklan berikutnya menjadi Rp 1.000!');
-            }
-
-            // Reward bonus if applicable
-            if (rewardAmount > 0) {
-                currentUser.balance += rewardAmount;
-                saveUserSession();
-                showToast(`🎉 ${message}`);
-            }
-        }
-
-        // SIMULATOR 15-SECOND ENGINE
-        function startAdSimulation() {
-            if (!currentUser.isLoggedIn) {
-                openLoginModal();
-                showToast('Silakan login terlebih dahulu untuk menyimpan saldo.');
+            if (!currentUser) {
+                openGmailLoginModal();
+                showToast('Tautkan Gmail Anda untuk menerima reward klik iklan!');
                 return;
             }
 
-            document.getElementById('sim-idle-view').classList.add('hidden');
-            document.getElementById('sim-reward-view').classList.add('hidden');
-            document.getElementById('sim-playing-view').classList.remove('hidden');
+            // Generate Reward between Rp 1.000 and Rp 2.500 (increments of 250)
+            const rewardsPool = [1000, 1250, 1500, 1750, 2000, 2250, 2500];
+            const earnedReward = rewardsPool[Math.floor(Math.random() * rewardsPool.length)];
 
-            simSecondsLeft = 15;
-            const timerDisplay = document.getElementById('sim-timer-display');
-            const timerBar = document.getElementById('sim-ad-timer-bar');
-            const claimBtn = document.getElementById('sim-claim-btn');
+            currentUser.balance += earnedReward;
+            currentUser.adsClicked = (currentUser.adsClicked || 0) + 1;
 
-            claimBtn.disabled = true;
-            claimBtn.className = "w-full bg-slate-800 text-slate-500 cursor-not-allowed font-bold py-3 rounded-xl transition text-sm";
-            claimBtn.innerText = "🔒 Tunggu 15 Detik";
+            const now = new Date();
+            const formattedDate = now.toLocaleDateString('id-ID', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) + ' WIB';
 
-            timerBar.style.width = '100%';
-            timerDisplay.innerText = '⏱️ 15 detik';
+            currentUser.transactions = currentUser.transactions || [];
+            currentUser.transactions.unshift({
+                id: "TX-CLICK-" + Math.floor(1000 + Math.random() * 9000),
+                date: formattedDate,
+                desc: `Klik Iklan (${adTitle})`,
+                amount: `+Rp ${earnedReward.toLocaleString('id-ID')}`,
+                type: "in"
+            });
 
-            clearInterval(simTimerInterval);
-            simTimerInterval = setInterval(() => {
-                simSecondsLeft--;
-                timerDisplay.innerText = '⏱️ ' + simSecondsLeft + ' detik';
-                timerBar.style.width = ((simSecondsLeft / 15) * 100) + '%';
-
-                if (simSecondsLeft <= 0) {
-                    clearInterval(simTimerInterval);
-                    unlockSimClaimButton();
-                }
-            }, 1000);
+            saveActiveSession(currentUser);
+            showToast(`🎉 Sukses! Anda mengklik ${adTitle} dan mendapatkan +Rp ${earnedReward.toLocaleString('id-ID')}!`);
         }
 
-        function unlockSimClaimButton() {
-            const claimBtn = document.getElementById('sim-claim-btn');
-            const timerDisplay = document.getElementById('sim-timer-display');
-            const timerBar = document.getElementById('sim-ad-timer-bar');
+        // REFERRAL ACTIONS (KODE REFERRAL REAL & BERBEDA SETIAP AKUN)
+        function copyReferralCode() {
+            if (!currentUser) return;
+            const code = currentUser.referralCode;
+            navigator.clipboard.writeText(code).then(() => {
+                showToast(`Kode referral unik Anda (${code}) berhasil disalin!`);
+            }).catch(() => {
+                showToast(`Kode referral: ${code}`);
+            });
+        }
 
-            timerDisplay.innerText = '✅ Selesai';
-            timerBar.style.width = '0%';
+        function copyReferralLink() {
+            const link = document.getElementById('referral-link-input').value;
+            navigator.clipboard.writeText(link).then(() => {
+                showToast('Link referral berhasil disalin! Bagikan ke teman untuk dapatkan Rp 15.000 per orang.');
+            }).catch(() => {
+                showToast('Link referral siap dibagikan.');
+            });
+        }
 
-            const reward = 500 * currentUser.multiplier;
-            claimBtn.disabled = false;
-            claimBtn.className = "w-full bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-extrabold text-sm py-3 rounded-xl shadow-lg shadow-emerald-500/30 transition transform hover:scale-[1.02] animate-pulse cursor-pointer";
-            claimBtn.innerText = `✨ KLAIM REWARD RP ${reward.toLocaleString('id-ID')} SEKARANG`;
+        function shareToWhatsApp() {
+            if (!currentUser) return;
+            const code = currentUser.referralCode;
+            const text = encodeURIComponent(`Halo! Gabung di KlikCuan yuk, klik iklan dibayar Rp 1.000 s/d Rp 2.500 per klik dan langsung cair ke DANA/OVO/GoPay. Gunakan link saya: https://klikcuan.id/?ref=${code}`);
+            window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
+        }
+
+        // KLAIM KODE REFERRAL TEMAN (+RP 5.000) DENGAN VALIDASI 1 HP
+        function handleRedeemReferralSubmit(e) {
+            e.preventDefault();
+            if (!currentUser) {
+                openGmailLoginModal();
+                showToast('Masuk dengan Gmail terlebih dahulu untuk mengklaim kode referral.');
+                return;
+            }
+
+            const input = document.getElementById('redeem-ref-code-input');
+            const code = input.value.trim().toUpperCase();
+            if (!code) {
+                showToast('Silakan ketik kode referral teman Anda.');
+                return;
+            }
+
+            // Anti Self-Referral Check
+            if (code === currentUser.referralCode) {
+                alert('❌ Gagal: Anda tidak dapat menggunakan kode referral Anda sendiri!');
+                return;
+            }
+
+            // Already Claimed Check
+            if (currentUser.claimedReferral) {
+                alert('⚠️ Akun Anda sudah pernah mengklaim bonus kode referral teman sebelumnya.');
+                return;
+            }
+
+            // Anti-Fraud: Same Device Protection
+            const binding = getDeviceBinding();
+            if (code === "KC-SELF-DEVICE" || (code.startsWith("KC-") && code.includes("DEV"))) {
+                alert('❌ Pelanggaran Anti-Fraud: Kode referral ini terdeteksi berasal dari perangkat HP yang sama! Bonus referral hanya sah jika berasal dari ponsel teman yang berbeda (1 HP 1 Akun).');
+                return;
+            }
+
+            // Valid Referral Claimed!
+            currentUser.claimedReferral = true;
+            currentUser.balance += 5000;
+            const now = new Date();
+            const formattedDate = now.toLocaleDateString('id-ID', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) + ' WIB';
+
+            currentUser.transactions = currentUser.transactions || [];
+            currentUser.transactions.unshift({
+                id: "TX-CLAIM-" + Math.floor(1000 + Math.random() * 9000),
+                date: formattedDate,
+                desc: `Bonus Klaim Referral (${code})`,
+                amount: "+Rp 5.000",
+                type: "in"
+            });
+
+            saveActiveSession(currentUser);
+            input.value = "";
+            showToast(`🎉 Sukses! Kode referral ${code} diterima. Bonus selamat datang +Rp 5.000 telah masuk ke saldo Anda!`);
+        }
+
+        // SIMULASI 1 TEMAN BERGABUNG DENGAN PONSEL BERBEDA (+RP 15.000)
+        function simulateReferralJoin() {
+            if (!currentUser) return;
+
+            const poolNames = ["Rian Hidayat", "Dewi Lestari", "Fajar Nugraha", "Anisa Putri", "Bayu Pratama", "Tri Wahyuni", "Doni Saputra", "Mega Silvia"];
+            const poolDevices = ["Xiaomi Redmi Note 12", "Samsung Galaxy A54", "Infinix Hot 30", "OPPO Reno 8", "Vivo Y36", "Realme C55"];
             
-            claimBtn.onclick = function() {
-                currentUser.balance += reward;
-                currentUser.adsWatched++;
-                document.getElementById('sim-reward-amount-text').innerText = `+Rp ${reward.toLocaleString('id-ID')} Berhasil Masuk!`;
-                
-                // Reset multiplier after claim
-                currentUser.multiplier = 1;
-                saveUserSession();
+            const randomName = poolNames[Math.floor(Math.random() * poolNames.length)];
+            const randomDevice = poolDevices[Math.floor(Math.random() * poolDevices.length)];
+            const friendRefCode = generateUniqueReferralCode(randomName.toLowerCase().replace(' ', '.') + "@gmail.com", randomName);
 
-                document.getElementById('sim-playing-view').classList.add('hidden');
-                document.getElementById('sim-reward-view').classList.remove('hidden');
-            };
+            currentUser.referralCount = (currentUser.referralCount || 0) + 1;
+            currentUser.balance += 15000;
+
+            const now = new Date();
+            const formattedDate = now.toLocaleDateString('id-ID', { day: 'numeric', month: 'short' });
+            const formattedTime = now.toLocaleDateString('id-ID', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) + ' WIB';
+
+            currentUser.referralFriends = currentUser.referralFriends || [];
+            currentUser.referralFriends.unshift({
+                id: "RF-" + (currentUser.referralFriends.length + 1),
+                name: randomName,
+                device: randomDevice,
+                refCode: friendRefCode,
+                date: formattedDate,
+                reward: "+Rp 15.000"
+            });
+
+            currentUser.transactions = currentUser.transactions || [];
+            currentUser.transactions.unshift({
+                id: "TX-REF-" + Math.floor(1000 + Math.random() * 9000),
+                date: formattedTime,
+                desc: `Bonus Referral Teman (${randomName} • ${randomDevice})`,
+                amount: "+Rp 15.000",
+                type: "in"
+            });
+
+            saveActiveSession(currentUser);
+            showToast(`🎉 1 teman baru (${randomName} • ${randomDevice}) bergabung! Bonus referral +Rp 15.000 telah masuk.`);
         }
 
-        // WITHDRAWAL SYSTEM
+        // ANTI-FRAUD MODAL HANDLERS
+        function openAntiFraudModal(attemptedEmail, boundEmail) {
+            const binding = getDeviceBinding();
+            document.getElementById('af-device-name').innerText = (binding && binding.deviceModel) || currentDevice.model;
+            document.getElementById('af-device-id').innerText = (binding && binding.deviceId) || currentDevice.id;
+            document.getElementById('af-bound-email').innerText = boundEmail;
+            document.getElementById('af-btn-email').innerText = boundEmail;
+            document.getElementById('device-anti-fraud-modal').classList.remove('hidden');
+        }
+
+        function closeAntiFraudModal() {
+            document.getElementById('device-anti-fraud-modal').classList.add('hidden');
+        }
+
+        function loginWithBoundAccount() {
+            closeAntiFraudModal();
+            const binding = getDeviceBinding();
+            if (binding && binding.boundEmail) {
+                executeAccountLogin(binding.boundEmail, binding.boundName || "Pengguna Asli");
+            }
+        }
+
+        // RESET BINDING KHUSUS UJI COBA
+        function resetDeviceBindingDemo() {
+            if (confirm('⚙️ Uji Coba Pengembang:\nApakah Anda ingin mereset ikatan perangkat ini agar bisa mencoba login akun lain?')) {
+                localStorage.removeItem(DEVICE_BINDING_KEY);
+                // Generate a fresh device ID
+                const randHex = Math.floor(Math.random() * 0xFFFFFF).toString(16).toUpperCase().padStart(6, '0');
+                const randNum = Math.floor(1000 + Math.random() * 9000);
+                const newId = `DEV-HP-${randNum}-${randHex}`;
+                localStorage.setItem(HARDWARE_DEVICE_ID_KEY, newId);
+                location.reload();
+            }
+        }
+
+        // GMAIL INSTANT LOGIN (SIMULASI PENAUTAN GMAIL DENGAN ATURAN 1 HP 1 AKUN)
+        function openGmailLoginModal() {
+            document.getElementById('gmail-login-modal').classList.remove('hidden');
+        }
+
+        function closeGmailLoginModal() {
+            document.getElementById('gmail-login-modal').classList.add('hidden');
+        }
+
+        function executeAccountLogin(email, name) {
+            const binding = getDeviceBinding();
+
+            // Check if device is bound to someone else
+            if (binding && binding.boundEmail && binding.boundEmail.toLowerCase() !== email.toLowerCase()) {
+                closeGmailLoginModal();
+                openAntiFraudModal(email, binding.boundEmail);
+                return;
+            }
+
+            // If device not bound, bind it now!
+            if (!binding) {
+                setDeviceBinding(email, name);
+            }
+
+            // Check if user account already exists in db
+            const db = getAccountsDb();
+            let user = db[email];
+
+            if (!user) {
+                // Create authentic new profile for this user
+                user = {
+                    email: email,
+                    name: name,
+                    balance: 50000,
+                    referralCount: 0,
+                    referralCode: generateUniqueReferralCode(email, name),
+                    claimedReferral: false,
+                    adsClicked: 0,
+                    totalWithdrawn: 0,
+                    joinDate: "08 Nov 2026",
+                    boundDeviceId: currentDevice.id,
+                    activeWallet: "DANA",
+                    wallets: {
+                        DANA: { linked: true, number: "0812-3456-7890", name: name },
+                        OVO: { linked: false, number: "", name: "" },
+                        GoPay: { linked: false, number: "", name: "" }
+                    },
+                    referralFriends: [],
+                    transactions: [
+                        { id: "TX-WELCOME", date: "08 Nov 2026 WIB", desc: "Bonus Akun Baru", amount: "+Rp 1.000", type: "in" }
+                    ]
+                };
+            }
+
+            currentUser = user;
+            saveActiveSession(currentUser);
+            closeGmailLoginModal();
+            showToast(`✅ Akun Gmail ${email} aktif dan terikat aman pada ponsel ini!`);
+        }
+
+        function loginWithPresetGmail(email, name) {
+            executeAccountLogin(email, name);
+        }
+
+        function handleCustomGmailLogin(e) {
+            e.preventDefault();
+            const email = document.getElementById('gmail-custom-input').value.trim();
+            let name = document.getElementById('gmail-custom-name').value.trim();
+            if (!name) {
+                name = email.split('@')[0];
+                name = name.charAt(0).toUpperCase() + name.slice(1);
+            }
+
+            executeAccountLogin(email, name);
+        }
+
+        function logoutUser() {
+            if (confirm('Yakin ingin keluar akun? Data Gmail, saldo, dan kode referral Anda tetap tersimpan.')) {
+                localStorage.removeItem(ACTIVE_SESSION_KEY);
+                currentUser = null;
+                updateUiState();
+                closeProfileModal();
+                showToast('Anda telah keluar akun.');
+            }
+        }
+
+        // TAUTKAN AKUN E-WALLET MODAL & LOGIC (DANA, OVO, GOPAY)
+        function openLinkWalletModal(walletType) {
+            if (!currentUser) {
+                openGmailLoginModal();
+                showToast('Tautkan Gmail Anda terlebih dahulu sebelum menautkan E-Wallet.');
+                return;
+            }
+
+            document.getElementById('link-wallet-type').value = walletType;
+            document.getElementById('link-wallet-title').innerText = `Tautkan Akun ${walletType}`;
+            document.getElementById('link-wallet-subtitle').innerText = `Hubungkan nomor HP ${walletType} Anda untuk pencairan saldo otomatis.`;
+            
+            const iconEl = document.getElementById('link-wallet-icon');
+            if (walletType === 'DANA') {
+                iconEl.className = "w-12 h-12 rounded-2xl bg-blue-600 flex items-center justify-center mx-auto mb-2 text-white text-xl font-extrabold shadow-lg";
+                iconEl.innerText = "D";
+            } else if (walletType === 'OVO') {
+                iconEl.className = "w-12 h-12 rounded-2xl bg-purple-700 flex items-center justify-center mx-auto mb-2 text-white text-xl font-extrabold shadow-lg";
+                iconEl.innerText = "O";
+            } else if (walletType === 'GoPay') {
+                iconEl.className = "w-12 h-12 rounded-2xl bg-cyan-600 flex items-center justify-center mx-auto mb-2 text-white text-xl font-extrabold shadow-lg";
+                iconEl.innerText = "G";
+            }
+
+            // Pre-fill existing data if any
+            const existing = (currentUser.wallets && currentUser.wallets[walletType]) || {};
+            document.getElementById('link-wallet-phone').value = existing.number || "081234567890";
+            document.getElementById('link-wallet-name').value = existing.name || currentUser.name;
+            document.getElementById('link-wallet-otp').value = "";
+
+            document.getElementById('link-wallet-modal').classList.remove('hidden');
+        }
+
+        function closeLinkWalletModal() {
+            document.getElementById('link-wallet-modal').classList.add('hidden');
+        }
+
+        function autoFillOtp() {
+            document.getElementById('link-wallet-otp').value = "8829";
+            showToast('Kode OTP 8829 terisi otomatis!');
+        }
+
+        function handleLinkWalletSubmit(e) {
+            e.preventDefault();
+            const walletType = document.getElementById('link-wallet-type').value;
+            const phone = document.getElementById('link-wallet-phone').value.trim();
+            const name = document.getElementById('link-wallet-name').value.trim();
+            const otp = document.getElementById('link-wallet-otp').value.trim();
+
+            if (!otp) {
+                alert('Silakan masukkan 4 digit kode OTP verifikasi (atau klik "Isi OTP Otomatis").');
+                return;
+            }
+
+            currentUser.wallets = currentUser.wallets || {};
+            const wasLinked = currentUser.wallets[walletType] && currentUser.wallets[walletType].linked;
+
+            currentUser.wallets[walletType] = {
+                linked: true,
+                number: phone,
+                name: name
+            };
+            currentUser.activeWallet = walletType;
+
+            // First time link bonus: +Rp 2.500
+            if (!wasLinked) {
+                currentUser.balance += 2500;
+                currentUser.transactions = currentUser.transactions || [];
+                const now = new Date();
+                const formattedDate = now.toLocaleDateString('id-ID', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) + ' WIB';
+                currentUser.transactions.unshift({
+                    id: "TX-BIND-" + walletType,
+                    date: formattedDate,
+                    desc: `Bonus Tautkan Akun ${walletType}`,
+                    amount: "+Rp 2.500",
+                    type: "in"
+                });
+                showToast(`🎉 Akun ${walletType} (${phone}) Berhasil Ditautkan! Bonus +Rp 2.500 masuk ke saldo.`);
+            } else {
+                showToast(`✅ Akun ${walletType} (${phone}) berhasil diperbarui!`);
+            }
+
+            saveActiveSession(currentUser);
+            closeLinkWalletModal();
+        }
+
+        // PROFILE MODAL & TABS
+        function openProfileModal(tab = 'summary') {
+            if (!currentUser) {
+                openGmailLoginModal();
+                showToast('Tautkan akun Gmail Anda terlebih dahulu.');
+                return;
+            }
+            switchProfileTab(tab);
+            document.getElementById('profile-modal').classList.remove('hidden');
+        }
+
+        function closeProfileModal() {
+            document.getElementById('profile-modal').classList.add('hidden');
+        }
+
+        function switchProfileTab(tab) {
+            const btnSummary = document.getElementById('p-tab-btn-summary');
+            const btnHistory = document.getElementById('p-tab-btn-history');
+
+            const viewSummary = document.getElementById('p-tab-summary');
+            const viewHistory = document.getElementById('p-tab-history');
+
+            [btnSummary, btnHistory].forEach(b => b.className = "flex-1 py-2 rounded-lg text-slate-400 hover:text-white");
+            [viewSummary, viewHistory].forEach(v => v.classList.add('hidden'));
+
+            if (tab === 'summary') {
+                btnSummary.className = "flex-1 py-2 rounded-lg bg-emerald-600 text-white";
+                viewSummary.classList.remove('hidden');
+            } else if (tab === 'history') {
+                btnHistory.className = "flex-1 py-2 rounded-lg bg-emerald-600 text-white";
+                viewHistory.classList.remove('hidden');
+            }
+        }
+
+        // WITHDRAWAL SYSTEM (MINIMAL RP 100.000)
         function openWithdrawModal() {
-            if (!currentUser.isLoggedIn) {
-                openLoginModal();
-                showToast('Silakan login untuk menarik saldo.');
+            if (!currentUser) {
+                openGmailLoginModal();
+                showToast('Silakan masuk dengan Gmail untuk menarik saldo.');
                 return;
             }
 
@@ -1172,7 +2148,8 @@
             document.getElementById('withdraw-loading-view').classList.add('hidden');
             document.getElementById('withdraw-success-view').classList.add('hidden');
 
-            selectWithdrawNominal(50000);
+            selectWithdrawNominal(100000);
+            renderWithdrawWalletSelector();
             document.getElementById('withdraw-modal').classList.remove('hidden');
         }
 
@@ -1191,13 +2168,13 @@
                 }
             });
 
-            // Check if sufficient
+            // Check if sufficient (Min. Rp 100.000)
             const warningEl = document.getElementById('withdraw-warning');
             const submitBtn = document.getElementById('withdraw-submit-btn');
             if (currentUser.balance < selectedWithdrawNominal) {
                 warningEl.classList.remove('hidden');
                 const diff = selectedWithdrawNominal - currentUser.balance;
-                document.getElementById('withdraw-warning-text').innerText = `Saldo Anda Rp ${currentUser.balance.toLocaleString('id-ID')}. Kurang Rp ${diff.toLocaleString('id-ID')} untuk menarik nominal ini.`;
+                document.getElementById('withdraw-warning-text').innerText = `Saldo Akun Anda Rp ${currentUser.balance.toLocaleString('id-ID')}. Batas minimal penarikan adalah Rp 100.000 (Kurang Rp ${diff.toLocaleString('id-ID')}). Klik iklan atau undang teman (+Rp 15.000) untuk menambah saldo!`;
                 submitBtn.disabled = true;
                 submitBtn.className = "w-full bg-slate-800 text-slate-500 cursor-not-allowed font-bold text-sm py-3 rounded-xl transition";
             } else {
@@ -1207,113 +2184,74 @@
             }
         }
 
-        function addDemoBalance50k() {
-            currentUser.balance += 50000;
-            saveUserSession();
+        function addDemoBalance100k() {
+            if (!currentUser) return;
+            currentUser.balance += 100000;
+            saveActiveSession(currentUser);
             selectWithdrawNominal(selectedWithdrawNominal);
-            showToast('✅ Saldo demo Rp 50.000 telah ditambahkan!');
+            showToast('✅ Saldo Rp 100.000 telah ditambahkan ke akun!');
         }
 
         function processWithdrawal() {
-            if (currentUser.balance < selectedWithdrawNominal) return;
+            if (!currentUser || currentUser.balance < selectedWithdrawNominal) return;
+
+            const wallets = currentUser.wallets || {};
+            const targetWallet = wallets[selectedWithdrawWalletKey];
+            if (!targetWallet || !targetWallet.linked) {
+                alert(`Akun ${selectedWithdrawWalletKey} belum ditautkan. Silakan tautkan terlebih dahulu.`);
+                return;
+            }
 
             document.getElementById('withdraw-form-view').classList.add('hidden');
             document.getElementById('withdraw-loading-view').classList.remove('hidden');
+            document.getElementById('withdraw-loading-status').innerText = `Menghubungkan ke Gateway ${selectedWithdrawWalletKey}...`;
 
             setTimeout(() => {
                 currentUser.balance -= selectedWithdrawNominal;
-                saveUserSession();
+                currentUser.totalWithdrawn = (currentUser.totalWithdrawn || 0) + selectedWithdrawNominal;
 
                 // Setup Receipt details
                 const now = new Date();
                 const randomId = Math.floor(1000000 + Math.random() * 9000000);
-                document.getElementById('receipt-trx-id').innerText = `TRX-CN-${randomId}`;
-                document.getElementById('receipt-date').innerText = now.toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' }) + ' WIB';
-                document.getElementById('receipt-wallet').innerText = currentUser.wallet;
-                document.getElementById('receipt-account').innerText = currentUser.accountNumber;
+                const trxId = `TRX-KC-${randomId}`;
+                const formattedDate = now.toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' }) + ' WIB';
+
+                document.getElementById('receipt-trx-id').innerText = trxId;
+                document.getElementById('receipt-date').innerText = formattedDate;
+                document.getElementById('receipt-wallet').innerText = selectedWithdrawWalletKey;
+                document.getElementById('receipt-account').innerText = targetWallet.number;
                 document.getElementById('receipt-amount').innerText = `Rp ${selectedWithdrawNominal.toLocaleString('id-ID')}`;
+
+                // Add to transactions
+                currentUser.transactions = currentUser.transactions || [];
+                currentUser.transactions.unshift({
+                    id: trxId,
+                    date: formattedDate,
+                    desc: `Penarikan ke ${selectedWithdrawWalletKey} (${targetWallet.number})`,
+                    amount: `-Rp ${selectedWithdrawNominal.toLocaleString('id-ID')}`,
+                    type: "out"
+                });
+
+                saveActiveSession(currentUser);
 
                 document.getElementById('withdraw-loading-view').classList.add('hidden');
                 document.getElementById('withdraw-success-view').classList.remove('hidden');
             }, 1800);
         }
 
-        // LOGIN SYSTEM
-        function openLoginModal() {
-            document.getElementById('login-modal').classList.remove('hidden');
+        function scrollToAdClickSection() {
+            document.getElementById('mode-klik').scrollIntoView({ behavior: 'smooth' });
         }
 
-        function closeLoginModal() {
-            document.getElementById('login-modal').classList.add('hidden');
+        function scrollToReferralSection() {
+            document.getElementById('referral').scrollIntoView({ behavior: 'smooth' });
         }
 
-        function loginQuickDemo() {
-            currentUser = {
-                isLoggedIn: true,
-                name: "Budi Santoso",
-                wallet: "DANA",
-                accountNumber: "0812-3456-7890",
-                balance: 48500,
-                multiplier: 1,
-                adsWatched: 97
-            };
-            saveUserSession();
-            closeLoginModal();
-            showToast('Selamat datang, Budi Santoso! Saldo Rp 48.500 siap digunakan.');
+        function scrollToEwalletSection() {
+            document.getElementById('tautkan-ewallet').scrollIntoView({ behavior: 'smooth' });
         }
 
-        function loginGoogleSimulated() {
-            currentUser = {
-                isLoggedIn: true,
-                name: "Prasetyo Wibowo",
-                wallet: "GoPay",
-                accountNumber: "0857-9876-5432",
-                balance: 50500,
-                multiplier: 1,
-                adsWatched: 101
-            };
-            saveUserSession();
-            closeLoginModal();
-            showToast('Berhasil masuk dengan Akun Google!');
-        }
-
-        function handleCustomLogin(e) {
-            e.preventDefault();
-            const name = document.getElementById('login-input-name').value.trim() || "Pengguna Cuan";
-            const wallet = document.getElementById('login-input-wallet').value;
-            const number = document.getElementById('login-input-number').value.trim() || "081234567890";
-
-            currentUser = {
-                isLoggedIn: true,
-                name: name,
-                wallet: wallet,
-                accountNumber: number,
-                balance: currentUser.balance || 48500,
-                multiplier: 1,
-                adsWatched: 97
-            };
-            saveUserSession();
-            closeLoginModal();
-            showToast(`Akun ${name} (${wallet}) berhasil disimpan!`);
-        }
-
-        function logoutUser() {
-            if (confirm('Yakin ingin keluar akun? Saldo Anda akan disimpan di perangkat ini.')) {
-                currentUser.isLoggedIn = false;
-                saveUserSession();
-                showToast('Anda telah keluar.');
-            }
-        }
-
-        function openProfileDrawer() {
-            openWithdrawModal();
-        }
-
-        function scrollToSimulator() {
-            document.getElementById('simulasi').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // CALCULATOR ENGINE
+        // CALCULATOR ENGINE (TARGET MINIMAL RP 100.000)
         const slider = document.getElementById('ad-slider');
         const sliderCount = document.getElementById('slider-count');
         const calcDaily = document.getElementById('calc-daily');
@@ -1322,10 +2260,11 @@
 
         slider.addEventListener('input', function() {
             const count = parseInt(this.value);
-            sliderCount.innerText = count + ' Iklan';
-            const daily = count * 500;
+            sliderCount.innerText = count + ' Klik';
+            const avgReward = 1750; // Rata-rata Min 1.000 s/d Maks 2.500
+            const daily = count * avgReward;
             const monthly = daily * 30;
-            const days = Math.ceil(50000 / daily);
+            const days = Math.ceil(100000 / daily);
 
             calcDaily.innerText = 'Rp ' + daily.toLocaleString('id-ID');
             calcMonthly.innerText = 'Rp ' + monthly.toLocaleString('id-ID');
@@ -1343,15 +2282,6 @@
                 ans.classList.add('hidden');
                 icon.innerText = '+';
             }
-        }
-
-        // DOWNLOAD MODAL
-        function openDownloadModal() {
-            document.getElementById('download-modal').classList.remove('hidden');
-        }
-
-        function closeDownloadModal() {
-            document.getElementById('download-modal').classList.add('hidden');
         }
 
         // INITIALIZE ON LOAD
