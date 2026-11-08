@@ -183,7 +183,13 @@ fun CuanNontonApp(
                     onToggleMute = { viewModel.toggleMute() },
                     onCloseClick = { viewModel.navigateTo(AppScreen.HOME) },
                     onActionClick = {
-                        Toast.makeText(context, "Membuka penawaran sponsor: ${adState.ad.title}", Toast.LENGTH_SHORT).show()
+                        val sponsorUrl = "https://demper.org/4/6705407964029137324caf2320288946"
+                        try {
+                            val intent = android.content.Intent(android.content.Intent.ACTION_VIEW, android.net.Uri.parse(sponsorUrl))
+                            context.startActivity(intent)
+                        } catch (e: Exception) {
+                            Toast.makeText(context, "Membuka penawaran sponsor: ${adState.ad.title}", Toast.LENGTH_SHORT).show()
+                        }
                     }
                 )
             }
