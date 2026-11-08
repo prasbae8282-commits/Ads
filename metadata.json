@@ -1,0 +1,8 @@
+{
+  "name": "CuanNonton",
+  "description": "Aplikasi penghasil rupiah dengan menonton iklan 15 detik. Dapatkan Rp 500 per iklan dan tarik saldo mulai Rp 50.000 ke DANA, GoPay, OVO, ShopeePay, atau Bank Transfer.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

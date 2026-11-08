@@ -1,0 +1,123 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Default deny all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Global helpers
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() > 0 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    // User Profile Validation
+    function isValidUserProfile(data) {
+      return data.userId is string && data.userId == request.auth.uid &&
+             data.displayName is string && data.displayName.size() <= 100 &&
+             data.email is string && data.email.size() <= 100 &&
+             (!('photoUrl' in data) || data.photoUrl == null || (data.photoUrl is string && data.photoUrl.size() <= 500)) &&
+             data.balance is int && data.balance >= 0 &&
+             data.totalEarned is int && data.totalEarned >= 0 &&
+             data.totalWithdrawn is int && data.totalWithdrawn >= 0 &&
+             data.adsWatchedCount is int && data.adsWatchedCount >= 0 &&
+             (!('adsWatchedToday' in data) || data.adsWatchedToday is int) &&
+             (!('lastActiveDate' in data) || (data.lastActiveDate is string && data.lastActiveDate.size() <= 20)) &&
+             (!('streakDays' in data) || data.streakDays is int) &&
+             (!('lastCheckInDate' in data) || (data.lastCheckInDate is string && data.lastCheckInDate.size() <= 20)) &&
+             data.updatedAt is timestamp && data.updatedAt <= request.time;
+    }
+
+    // Reward Transaction Validation
+    function isValidRewardTransaction(data) {
+      return data.userId is string && data.userId == request.auth.uid &&
+             data.type is string && (data.type in ['AD_REWARD', 'CHECK_IN', 'BONUS_QUEST', 'WITHDRAWAL']) &&
+             data.title is string && data.title.size() > 0 && data.title.size() <= 100 &&
+             (!('detail' in data) || (data.detail is string && data.detail.size() <= 200)) &&
+             data.amount is int &&
+             data.status is string && (data.status in ['SUCCESS', 'PROCESSING']) &&
+             data.transactionCode is string && data.transactionCode.size() <= 64 &&
+             data.createdAt is timestamp && data.createdAt <= request.time;
+    }
+
+    // Withdrawal Request Validation
+    function isValidWithdrawalRequest(data) {
+      return data.userId is string && data.userId == request.auth.uid &&
+             data.method is string && data.method.size() <= 32 &&
+             data.providerName is string && data.providerName.size() <= 50 &&
+             data.accountNumber is string && data.accountNumber.size() >= 8 && data.accountNumber.size() <= 50 &&
+             data.accountName is string && data.accountName.size() >= 3 && data.accountName.size() <= 100 &&
+             data.amount is int && data.amount >= 50000 &&
+             data.adminFee is int && data.adminFee == 0 &&
+             data.totalReceived is int && data.totalReceived == data.amount &&
+             data.status is string && (data.status in ['DIPROSES', 'BERHASIL']) &&
+             data.referenceCode is string && data.referenceCode.size() <= 64 &&
+             (!('estimatedArrival' in data) || (data.estimatedArrival is string && data.estimatedArrival.size() <= 50)) &&
+             data.createdAt is timestamp && data.createdAt <= request.time;
+    }
+
+    // Users Collection
+    match /users/{userId} {
+      allow get: if isOwner(userId) && isValidId(userId);
+      allow list: if isOwner(userId);
+
+      allow create: if isOwner(userId) &&
+                       isValidId(userId) &&
+                       incoming().userId == request.auth.uid &&
+                       incoming().createdAt is timestamp &&
+                       incoming().createdAt <= request.time &&
+                       isValidUserProfile(incoming());
+
+      allow update: if isOwner(userId) &&
+                       isValidId(userId) &&
+                       incoming().userId == existing().userId &&
+                       incoming().createdAt == existing().createdAt &&
+                       isValidUserProfile(incoming());
+
+      allow delete: if false;
+
+      // User Transactions Subcollection
+      match /transactions/{transactionId} {
+        allow get: if isOwner(userId) && isValidId(transactionId);
+        allow list: if isOwner(userId);
+
+        allow create: if isOwner(userId) &&
+                         isValidId(transactionId) &&
+                         incoming().userId == request.auth.uid &&
+                         isValidRewardTransaction(incoming());
+
+        allow update, delete: if false; // Transactions are immutable ledger entries
+      }
+
+      // User Withdrawals Subcollection
+      match /withdrawals/{withdrawalId} {
+        allow get: if isOwner(userId) && isValidId(withdrawalId);
+        allow list: if isOwner(userId);
+
+        allow create: if isOwner(userId) &&
+                         isValidId(withdrawalId) &&
+                         incoming().userId == request.auth.uid &&
+                         isValidWithdrawalRequest(incoming());
+
+        allow update, delete: if false; // Payout records are immutable by clients
+      }
+    }
+  }
+}

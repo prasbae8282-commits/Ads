@@ -1,0 +1,191 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User account profile storing balance, ad reward stats, and streak information.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Firebase Auth UID matching document ID."
+        },
+        "displayName": {
+          "type": "string",
+          "description": "User display name from Google Sign-In."
+        },
+        "email": {
+          "type": "string",
+          "description": "User email address."
+        },
+        "photoUrl": {
+          "type": "string",
+          "description": "User profile photo URL."
+        },
+        "balance": {
+          "type": "integer",
+          "description": "Current balance in Indonesian Rupiah (IDR)."
+        },
+        "totalEarned": {
+          "type": "integer",
+          "description": "Lifetime total earnings in Rupiah."
+        },
+        "totalWithdrawn": {
+          "type": "integer",
+          "description": "Lifetime total successfully withdrawn Rupiah."
+        },
+        "adsWatchedCount": {
+          "type": "integer",
+          "description": "Total 15-second ads watched."
+        },
+        "adsWatchedToday": {
+          "type": "integer",
+          "description": "Ads watched on the current active date."
+        },
+        "lastActiveDate": {
+          "type": "string",
+          "description": "Current active date string (YYYY-MM-DD)."
+        },
+        "streakDays": {
+          "type": "integer",
+          "description": "Consecutive daily check-in streak count."
+        },
+        "lastCheckInDate": {
+          "type": "string",
+          "description": "Last date of claimed daily bonus."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp of account creation."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp of last profile update."
+        }
+      },
+      "required": ["userId", "displayName", "email", "balance", "totalEarned", "totalWithdrawn", "adsWatchedCount", "createdAt", "updatedAt"]
+    },
+    "RewardTransaction": {
+      "title": "RewardTransaction",
+      "description": "Record of earnings, rewards, or withdrawal deductions.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "User ID owner of transaction."
+        },
+        "type": {
+          "type": "string",
+          "description": "Transaction category.",
+          "enum": ["AD_REWARD", "CHECK_IN", "BONUS_QUEST", "WITHDRAWAL"]
+        },
+        "title": {
+          "type": "string",
+          "description": "Transaction title."
+        },
+        "detail": {
+          "type": "string",
+          "description": "Additional transaction info (e.g. sponsor name or account details)."
+        },
+        "amount": {
+          "type": "integer",
+          "description": "Transaction amount in Rupiah (+500, -50000, etc.)."
+        },
+        "status": {
+          "type": "string",
+          "description": "Status of transaction.",
+          "enum": ["SUCCESS", "PROCESSING"]
+        },
+        "transactionCode": {
+          "type": "string",
+          "description": "Unique reference ID code."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Creation timestamp."
+        }
+      },
+      "required": ["userId", "type", "title", "amount", "status", "transactionCode", "createdAt"]
+    },
+    "WithdrawalRequest": {
+      "title": "WithdrawalRequest",
+      "description": "User payout request record with minimum Rp 50.000.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Owner user ID."
+        },
+        "method": {
+          "type": "string",
+          "description": "Withdrawal method provider ID."
+        },
+        "providerName": {
+          "type": "string",
+          "description": "Provider display name (DANA, GoPay, OVO, etc.)."
+        },
+        "accountNumber": {
+          "type": "string",
+          "description": "Target phone or bank account number."
+        },
+        "accountName": {
+          "type": "string",
+          "description": "Target account holder name."
+        },
+        "amount": {
+          "type": "integer",
+          "description": "Requested withdrawal amount in Rupiah (min 50000)."
+        },
+        "adminFee": {
+          "type": "integer",
+          "description": "Admin fee in Rupiah (0)."
+        },
+        "totalReceived": {
+          "type": "integer",
+          "description": "Total amount received by user."
+        },
+        "status": {
+          "type": "string",
+          "description": "Payout status.",
+          "enum": ["DIPROSES", "BERHASIL"]
+        },
+        "referenceCode": {
+          "type": "string",
+          "description": "Unique transaction tracking code."
+        },
+        "estimatedArrival": {
+          "type": "string",
+          "description": "Estimated processing time."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Request timestamp."
+        }
+      },
+      "required": ["userId", "method", "providerName", "accountNumber", "accountName", "amount", "adminFee", "totalReceived", "status", "referenceCode", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": {
+        "$ref": "#/entities/UserProfile"
+      },
+      "description": "User profile with balance, stats, and streak information."
+    },
+    "/users/{userId}/transactions/{transactionId}": {
+      "schema": {
+        "$ref": "#/entities/RewardTransaction"
+      },
+      "description": "User reward and payout transactions."
+    },
+    "/users/{userId}/withdrawals/{withdrawalId}": {
+      "schema": {
+        "$ref": "#/entities/WithdrawalRequest"
+      },
+      "description": "User withdrawal payout requests."
+    }
+  }
+}
