@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CuanNonton - Nonton Iklan 15 Detik Dibayar Rp 500</title>
+    <meta name="description" content="Aplikasi penghasil rupiah terpercaya. Cukup tonton iklan 15 detik dan dibayar Rp 500 per iklan. Minimal penarikan Rp 50.000 langsung cair ke DANA, GoPay, OVO, ShopeePay, dan Transfer Bank.">
+    <meta name="keywords" content="aplikasi penghasil uang, nonton iklan dapat uang, cuannonton, saldo dana gratis, penghasil rupiah, gopay gratis">
+    
+    <!-- Open Graph for Social Sharing / Vercel Preview -->
+    <meta property="og:title" content="CuanNonton - Nonton Iklan 15 Detik Dibayar Rp 500">
+    <meta property="og:description" content="Minimal penarikan Rp 50.000 langsung cair ke DANA, GoPay, OVO, ShopeePay. Tanpa biaya admin!">
+    <meta property="og:image" content="/images/hero_banner.jpg">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eefcf5',
+                            100: '#d7f7e7',
+                            500: '#00875a',
+                            600: '#006f4a',
+                            700: '#00573b',
+                            800: '#00422d',
+                            900: '#003323',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glow-emerald {
+            box-shadow: 0 0 35px -5px rgba(0, 135, 90, 0.3);
+        }
+        .glow-gold {
+            box-shadow: 0 0 35px -5px rgba(245, 158, 11, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased overflow-x-hidden">
+
+    <!-- NAVBAR -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-3">
+                <img src="/images/reward_coin.jpg" alt="Logo CuanNonton" class="w-9 h-9 rounded-full object-cover shadow-md shadow-brand-500/20">
+                <span class="text-xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-amber-300">CuanNonton</span>
+            </a>
+
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+                <a href="#fitur" class="hover:text-emerald-400 transition">Fitur</a>
+                <a href="#cara-kerja" class="hover:text-emerald-400 transition">Cara Kerja</a>
+                <a href="#simulasi" class="hover:text-emerald-400 transition">Simulasi</a>
+                <a href="#kalkulator" class="hover:text-emerald-400 transition">Kalkulator</a>
+                <a href="#faq" class="hover:text-emerald-400 transition">FAQ</a>
+            </nav>
+
+            <div class="flex items-center space-x-3">
+                <button onclick="openDownloadModal()" class="bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white text-xs sm:text-sm font-bold px-4 py-2 rounded-full shadow-lg shadow-emerald-500/25 transition-all transform hover:-translate-y-0.5">
+                    Unduh APK
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-28 pb-20 md:pt-36 md:pb-32 overflow-hidden">
+        <!-- Background Ambient Glow -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-emerald-500/20 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-72 h-72 bg-amber-500/15 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 relative">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Content -->
+                <div class="lg:col-span-7 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-emerald-500/10 border border-emerald-500/30 px-3.5 py-1.5 rounded-full mb-6">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                        <span class="text-xs font-semibold text-emerald-300">Terbukti Membayar • Update Versi 1.0</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight mb-6">
+                        Nonton Iklan <span class="text-amber-400">15 Detik</span>,<br>
+                        Dibayar <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300">Rp 500</span> Per Iklan!
+                    </h1>
+
+                    <p class="text-slate-300 text-base sm:text-lg mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                        Kumpulkan pundi-pundi rupiah dari rumah hanya dengan menonton video sponsor. Minimal penarikan sangat terjangkau mulai 
+                        <strong class="text-white font-semibold">Rp 50.000</strong> langsung ditransfer ke <strong class="text-emerald-400">DANA, GoPay, OVO, ShopeePay & Bank</strong> tanpa potongan biaya admin!
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10">
+                        <button onclick="openDownloadModal()" class="w-full sm:w-auto inline-flex items-center justify-center space-x-3 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-bold px-7 py-3.5 rounded-xl shadow-xl shadow-emerald-500/30 transition transform hover:-translate-y-0.5">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+                            <span>Unduh APK CuanNonton</span>
+                        </button>
+
+                        <a href="#simulasi" class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-slate-800/80 hover:bg-slate-800 border border-slate-700 text-slate-200 font-semibold px-6 py-3.5 rounded-xl transition">
+                            <svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                            <span>Coba Simulasi di Web</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust Stats Grid -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-slate-800/80 text-center lg:text-left">
+                        <div>
+                            <div class="text-xl sm:text-2xl font-extrabold text-amber-400">Rp 500</div>
+                            <div class="text-xs text-slate-400">Per Iklan 15 Detik</div>
+                        </div>
+                        <div>
+                            <div class="text-xl sm:text-2xl font-extrabold text-emerald-400">Rp 50.000</div>
+                            <div class="text-xs text-slate-400">Min. Penarikan</div>
+                        </div>
+                        <div>
+                            <div class="text-xl sm:text-2xl font-extrabold text-white">1 - 15 Mnt</div>
+                            <div class="text-xs text-slate-400">Pencairan E-Wallet</div>
+                        </div>
+                        <div>
+                            <div class="text-xl sm:text-2xl font-extrabold text-emerald-400">Rp 0</div>
+                            <div class="text-xs text-slate-400">Biaya Admin</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual Phone Showcase -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-72 sm:w-80 rounded-[2.5rem] p-3.5 bg-slate-800 border-4 border-slate-700 shadow-2xl shadow-emerald-950/60 glow-emerald">
+                        <!-- Phone Screen -->
+                        <div class="rounded-[2rem] bg-slate-950 overflow-hidden border border-slate-800 p-4 relative">
+                            <!-- App Top Header -->
+                            <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-3">
+                                <div class="flex items-center space-x-2">
+                                    <img src="/images/reward_coin.jpg" class="w-7 h-7 rounded-full object-cover">
+                                    <span class="font-extrabold text-sm text-emerald-400">CuanNonton</span>
+                                </div>
+                                <span class="text-[10px] bg-amber-500/20 text-amber-300 font-bold px-2 py-0.5 rounded-full">VIP Cuan</span>
+                            </div>
+
+                            <!-- Balance Card Mockup -->
+                            <div class="bg-gradient-to-br from-slate-900 to-slate-800 border border-slate-700/80 rounded-2xl p-4 mb-3.5">
+                                <div class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Saldo Saat Ini</div>
+                                <div class="text-2xl font-extrabold text-emerald-400 mt-0.5 mb-2">Rp 50.500</div>
+                                
+                                <div class="space-y-1 mb-3">
+                                    <div class="flex justify-between text-[10px]">
+                                        <span class="text-slate-400">Progres Penarikan</span>
+                                        <span class="text-emerald-400 font-bold">100% (Target Terpenuhi)</span>
+                                    </div>
+                                    <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                        <div class="bg-emerald-500 h-full rounded-full w-full"></div>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-2">
+                                    <div class="bg-emerald-600 text-white text-[11px] font-bold py-2 rounded-lg text-center flex items-center justify-center space-x-1 shadow-md shadow-emerald-600/30">
+                                        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/></svg>
+                                        <span>Nonton (+500)</span>
+                                    </div>
+                                    <div class="bg-slate-800 border border-slate-700 text-slate-200 text-[11px] font-bold py-2 rounded-lg text-center">
+                                        Tarik Saldo
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Simulated Ad Item Card -->
+                            <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-3 mb-3">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-[10px] font-bold text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded">IKLAN BERIKUTNYA</span>
+                                    <span class="text-[10px] text-slate-400">⏱️ 15 Detik</span>
+                                </div>
+                                <div class="text-xs font-bold text-white mb-0.5">Shopee Mega Sale 2026</div>
+                                <div class="text-[10px] text-slate-400 mb-2">Dapatkan Rp 500 setelah countdown 15s selesai.</div>
+                                <div class="w-full bg-slate-800 h-1 rounded-full overflow-hidden">
+                                    <div class="bg-amber-400 h-full w-3/4 animate-pulse"></div>
+                                </div>
+                            </div>
+
+                            <!-- Live E-Wallet Logos -->
+                            <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-2.5 flex items-center justify-around text-center">
+                                <span class="text-[10px] font-bold text-blue-400">DANA</span>
+                                <span class="text-[10px] font-bold text-green-400">GoPay</span>
+                                <span class="text-[10px] font-bold text-purple-400">OVO</span>
+                                <span class="text-[10px] font-bold text-orange-400">ShopeePay</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- LIVE WEB SIMULATOR SECTION -->
+    <section id="simulasi" class="py-20 bg-slate-950/70 border-y border-slate-800 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12">
+                <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Uji Coba Langsung di Browser</span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-3 mb-4">Simulasi Nonton Iklan 15 Detik</h2>
+                <p class="text-slate-400 text-sm sm:text-base max-w-xl mx-auto">
+                    Coba rasakan sendiri sensasi menonton iklan sponsor 15 detik dan melihat saldo Anda bertambah Rp 500 secara instan!
+                </p>
+            </div>
+
+            <!-- Interactive Widget Card -->
+            <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl relative glow-emerald">
+                
+                <!-- Balance & Progress Bar inside simulator -->
+                <div class="flex flex-col sm:flex-row items-center justify-between pb-6 border-b border-slate-800 gap-4">
+                    <div>
+                        <div class="text-xs text-slate-400 uppercase font-semibold">Simulasi Saldo Anda</div>
+                        <div id="sim-balance" class="text-3xl sm:text-4xl font-extrabold text-emerald-400 mt-1">Rp 48.500</div>
+                    </div>
+                    
+                    <div class="w-full sm:w-64">
+                        <div class="flex justify-between text-xs mb-1.5">
+                            <span class="text-slate-400">Target Min. Penarikan</span>
+                            <span id="sim-target-text" class="text-amber-400 font-bold">Rp 48.500 / Rp 50.000 (97%)</span>
+                        </div>
+                        <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                            <div id="sim-progress-bar" class="bg-gradient-to-r from-emerald-500 to-amber-400 h-full rounded-full transition-all duration-500" style="width: 97%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Simulation Interactive Player -->
+                <div class="py-8 text-center" id="sim-idle-view">
+                    <div class="w-20 h-20 rounded-full bg-emerald-500/10 border-2 border-emerald-500/30 flex items-center justify-center mx-auto mb-4 text-emerald-400">
+                        <svg class="w-10 h-10 fill-current" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-1">Siap Nonton Iklan 15 Detik?</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm mb-6 max-w-md mx-auto">Klik tombol di bawah untuk memutar simulasi iklan selama 15 detik dan dapatkan reward Rp 500.</p>
+                    <button onclick="startAdSimulation()" class="bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg shadow-emerald-500/25 transition transform hover:scale-105">
+                        ▶️ Mulai Tonton Iklan (+Rp 500)
+                    </button>
+                </div>
+
+                <!-- Active Ad Countdown View (Hidden by default) -->
+                <div class="py-6 text-center hidden" id="sim-playing-view">
+                    <div class="bg-slate-950 border border-slate-800 rounded-2xl p-6 max-w-lg mx-auto mb-6">
+                        <div class="flex items-center justify-between text-xs text-slate-400 mb-3 pb-2 border-b border-slate-800">
+                            <span class="font-bold text-amber-400">Sponsor: Tokopedia WIB Sale</span>
+                            <span class="bg-slate-800 px-2.5 py-1 rounded-full text-slate-300 font-mono" id="sim-timer-display">⏱️ 15 detik</span>
+                        </div>
+                        <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden mb-4">
+                            <div id="sim-ad-timer-bar" class="bg-amber-400 h-full w-full transition-all duration-1000 ease-linear"></div>
+                        </div>
+                        <p class="text-sm font-semibold text-white mb-1">Sedang Memutar Iklan Sponsor...</p>
+                        <p class="text-xs text-slate-400">Tunggu hingga 15 detik selesai untuk mengklaim Rp 500.</p>
+                    </div>
+
+                    <button id="sim-claim-btn" disabled class="bg-slate-800 text-slate-500 cursor-not-allowed font-bold px-8 py-3.5 rounded-xl transition">
+                        🔒 Tunggu 15 Detik
+                    </button>
+                </div>
+
+                <!-- Reward Claimed Celebration (Hidden by default) -->
+                <div class="py-6 text-center hidden" id="sim-reward-view">
+                    <div class="w-16 h-16 rounded-full bg-amber-400/20 border-2 border-amber-400 flex items-center justify-center mx-auto mb-3 text-amber-400 text-2xl animate-bounce">
+                        🎉
+                    </div>
+                    <div class="text-2xl font-extrabold text-amber-400 mb-1">+Rp 500 Berhasil Masuk!</div>
+                    <p class="text-slate-300 text-xs sm:text-sm mb-6 max-w-md mx-auto">Saldo Anda kini telah bertambah. Lanjutkan menonton hingga minimal Rp 50.000 untuk menarik saldo ke DANA / GoPay.</p>
+                    
+                    <div class="flex flex-col sm:flex-row justify-center gap-3">
+                        <button onclick="startAdSimulation()" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-2.5 rounded-xl text-sm transition">
+                            Tonton Iklan Lagi (+500)
+                        </button>
+                        <button onclick="triggerSimulatedWithdrawal()" class="bg-slate-800 hover:bg-slate-700 text-white font-bold px-6 py-2.5 rounded-xl text-sm border border-slate-700 transition">
+                            Simulasikan Tarik Saldo
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CALCULATOR SECTION -->
+    <section id="kalkulator" class="py-20 bg-slate-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12">
+                <span class="text-xs font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">Kalkulator Potensi Cuan</span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-3 mb-4">Berapa Penghasilan yang Bisa Anda Dapatkan?</h2>
+                <p class="text-slate-400 text-sm sm:text-base max-w-xl mx-auto">Geser slider di bawah untuk menghitung potensi penghasilan harian dan bulanan Anda.</p>
+            </div>
+
+            <div class="bg-slate-800/80 border border-slate-700 rounded-3xl p-6 sm:p-10 shadow-xl">
+                <div class="mb-8">
+                    <div class="flex justify-between items-center mb-3">
+                        <label for="ad-slider" class="text-sm sm:text-base font-bold text-white">Jumlah Iklan Ditonton Per Hari:</label>
+                        <span id="slider-count" class="text-xl sm:text-2xl font-extrabold text-amber-400 bg-slate-900 px-4 py-1 rounded-xl border border-slate-700">20 Iklan</span>
+                    </div>
+                    <input id="ad-slider" type="range" min="5" max="100" value="20" step="5" class="w-full h-3 bg-slate-950 rounded-lg appearance-none cursor-pointer accent-emerald-500">
+                    <div class="flex justify-between text-xs text-slate-500 mt-2">
+                        <span>5 Iklan</span>
+                        <span>50 Iklan</span>
+                        <span>100 Iklan</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4">
+                        <div class="text-xs text-slate-400 uppercase font-semibold mb-1">Per Hari</div>
+                        <div id="calc-daily" class="text-2xl font-extrabold text-emerald-400">Rp 10.000</div>
+                        <div class="text-[10px] text-slate-500 mt-1">20 × Rp 500</div>
+                    </div>
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4">
+                        <div class="text-xs text-slate-400 uppercase font-semibold mb-1">Per Bulan (30 Hari)</div>
+                        <div id="calc-monthly" class="text-2xl font-extrabold text-amber-400">Rp 300.000</div>
+                        <div class="text-[10px] text-slate-500 mt-1">Estimasi tanpa bonus</div>
+                    </div>
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4">
+                        <div class="text-xs text-slate-400 uppercase font-semibold mb-1">Waktu Capai Rp 50.000</div>
+                        <div id="calc-days-needed" class="text-2xl font-extrabold text-white">5 Hari</div>
+                        <div class="text-[10px] text-slate-500 mt-1">Untuk minimal penarikan</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARA KERJA SECTION -->
+    <section id="cara-kerja" class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-16">
+                <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Panduan Sederhana</span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-3 mb-4">4 Langkah Mudah Menghasilkan Cuan</h2>
+                <p class="text-slate-400 text-sm sm:text-base max-w-xl mx-auto">Tidak perlu keahlian khusus. Semua orang bisa mulai sekarang juga dari ponsel Android.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 relative">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 font-extrabold flex items-center justify-center text-lg mb-4">1</div>
+                    <h3 class="text-base font-bold text-white mb-2">Pasang APK CuanNonton</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Unduh file APK resmi dan pasang di ponsel Android Anda secara gratis.</p>
+                </div>
+
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 relative">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 font-extrabold flex items-center justify-center text-lg mb-4">2</div>
+                    <h3 class="text-base font-bold text-white mb-2">Masuk dengan Google</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Satu klik login dengan akun Google. Saldo dan riwayat Anda tersimpan aman di cloud.</p>
+                </div>
+
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 relative">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 font-extrabold flex items-center justify-center text-lg mb-4">3</div>
+                    <h3 class="text-base font-bold text-white mb-2">Tonton Iklan 15 Detik</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Tonton video sponsor sampai timer 15 detik berakhir untuk mengantongi Rp 500 per iklan.</p>
+                </div>
+
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 relative">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 font-extrabold flex items-center justify-center text-lg mb-4">4</div>
+                    <h3 class="text-base font-bold text-white mb-2">Tarik Mulai Rp 50.000</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Setelah mencapai minimal Rp 50.000, cairkan langsung ke DANA, GoPay, OVO, atau Rekening Bank.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="py-20 bg-slate-900">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12">
+                <span class="text-xs font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">Pertanyaan Umum</span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-3 mb-4">Pertanyaan yang Sering Diajukan</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 cursor-pointer" onclick="toggleFaq(1)">
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-sm sm:text-base font-bold text-white">Berapa lama iklan harus ditonton?</h4>
+                        <span id="faq-icon-1" class="text-emerald-400 text-xl font-bold">+</span>
+                    </div>
+                    <p id="faq-ans-1" class="hidden text-xs sm:text-sm text-slate-400 mt-3 pt-3 border-t border-slate-700 leading-relaxed">
+                        Iklan berdurasi tepat 15 detik. Selama timer berjalan, tombol klaim dikunci dan akan otomatis aktif setelah 15 detik berakhir untuk memastikan reward Rp 500 valid masuk ke akun Anda.
+                    </p>
+                </div>
+
+                <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 cursor-pointer" onclick="toggleFaq(2)">
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-sm sm:text-base font-bold text-white">Berapa batas minimal penarikan dana?</h4>
+                        <span id="faq-icon-2" class="text-emerald-400 text-xl font-bold">+</span>
+                    </div>
+                    <p id="faq-ans-2" class="hidden text-xs sm:text-sm text-slate-400 mt-3 pt-3 border-t border-slate-700 leading-relaxed">
+                        Batas minimal penarikan adalah Rp 50.000. Anda juga dapat memilih nominal Rp 75.000, Rp 100.000, Rp 150.000, hingga Rp 250.000 setelah saldo terkumpul.
+                    </p>
+                </div>
+
+                <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 cursor-pointer" onclick="toggleFaq(3)">
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-sm sm:text-base font-bold text-white">Metode pembayaran apa saja yang tersedia?</h4>
+                        <span id="faq-icon-3" class="text-emerald-400 text-xl font-bold">+</span>
+                    </div>
+                    <p id="faq-ans-3" class="hidden text-xs sm:text-sm text-slate-400 mt-3 pt-3 border-t border-slate-700 leading-relaxed">
+                        Kami mendukung e-wallet populer di Indonesia seperti DANA, GoPay, OVO, ShopeePay, serta Transfer Bank lokal (BCA, BRI, Mandiri, BNI).
+                    </p>
+                </div>
+
+                <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 cursor-pointer" onclick="toggleFaq(4)">
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-sm sm:text-base font-bold text-white">Apakah ada potongan biaya admin saat tarik dana?</h4>
+                        <span id="faq-icon-4" class="text-emerald-400 text-xl font-bold">+</span>
+                    </div>
+                    <p id="faq-ans-4" class="hidden text-xs sm:text-sm text-slate-400 mt-3 pt-3 border-t border-slate-700 leading-relaxed">
+                        100% Gratis! Tidak ada biaya admin sama sekali. Jika Anda menarik Rp 50.000, maka saldo utuh Rp 50.000 yang akan masuk ke e-wallet Anda.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION BANNER -->
+    <section class="py-16 bg-gradient-to-r from-emerald-900/60 via-slate-900 to-slate-900 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-2xl sm:text-4xl font-extrabold text-white mb-4">Mulai Hasilkan Cuan Pertama Anda Hari Ini!</h2>
+            <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto mb-8">
+                Tonton iklan 15 detik, kumpulkan saldo hingga Rp 50.000, dan cairkan langsung ke DANA atau GoPay Anda sekarang.
+            </p>
+            <button onclick="openDownloadModal()" class="bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-extrabold px-8 py-4 rounded-xl shadow-xl shadow-amber-500/20 text-base transition transform hover:-translate-y-0.5">
+                📲 Unduh CuanNonton APK Sekarang
+            </button>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-8 bg-slate-950 border-t border-slate-800/80 text-center text-xs text-slate-500">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center space-x-2">
+                <img src="/images/reward_coin.jpg" class="w-5 h-5 rounded-full object-cover">
+                <span class="font-bold text-slate-400">CuanNonton Indonesia</span>
+            </div>
+            <div>
+                © 2026 CuanNonton. Semua hak cipta dilindungi.
+            </div>
+            <div class="flex space-x-4">
+                <a href="#faq" class="hover:underline">Bantuan</a>
+                <a href="#" onclick="openDownloadModal(); return false;" class="hover:underline">Unduh APK</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- DOWNLOAD APK MODAL -->
+    <div id="download-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-md w-full p-6 text-center relative shadow-2xl glow-emerald">
+            <button onclick="closeDownloadModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+
+            <img src="/images/app_icon.jpg" class="w-16 h-16 rounded-2xl mx-auto mb-3 shadow-lg object-cover">
+            <h3 class="text-xl font-bold text-white mb-1">Unduh CuanNonton APK</h3>
+            <p class="text-xs text-slate-400 mb-5">Versi 1.0.0 • Ukuran ±18 MB • Mendukung Android 7.0+</p>
+
+            <div class="bg-slate-950 border border-slate-800 rounded-xl p-3.5 text-left mb-6 text-xs space-y-2 text-slate-300">
+                <div class="font-bold text-amber-400 mb-1 flex items-center space-x-1.5">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
+                    <span>Cara Pasang APK di HP:</span>
+                </div>
+                <div>1. Klik tombol <strong>"Unduh APK Sekarang"</strong>.</div>
+                <div>2. Jika muncul peringatan keamanan, pilih <strong>"Tetap Unduh / Download Anyway"</strong>.</div>
+                <div>3. Buka file APK lalu pilih <strong>"Instal"</strong> (Izinkan dari sumber ini jika diminta).</div>
+            </div>
+
+            <a href="/app-release.apk" onclick="alert('Mengunduh APK CuanNonton... Pastikan mengizinkan instalasi sumber tidak dikenal di pengaturan Android Anda.');" class="w-full inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-bold py-3.5 rounded-xl shadow-lg transition">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+                <span>Unduh APK Sekarang (Gratis)</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Simulator Logic
+        let simBalance = 48500;
+        const simMinTarget = 50000;
+        let simTimerInterval = null;
+
+        function updateSimUi() {
+            document.getElementById('sim-balance').innerText = 'Rp ' + simBalance.toLocaleString('id-ID');
+            const pct = Math.min(100, Math.round((simBalance / simMinTarget) * 100));
+            document.getElementById('sim-progress-bar').style.width = pct + '%';
+            document.getElementById('sim-target-text').innerText = 'Rp ' + simBalance.toLocaleString('id-ID') + ' / Rp 50.000 (' + pct + '%)';
+        }
+
+        function startAdSimulation() {
+            document.getElementById('sim-idle-view').classList.add('hidden');
+            document.getElementById('sim-reward-view').classList.add('hidden');
+            document.getElementById('sim-playing-view').classList.remove('hidden');
+
+            let secondsLeft = 15;
+            const timerDisplay = document.getElementById('sim-timer-display');
+            const timerBar = document.getElementById('sim-ad-timer-bar');
+            const claimBtn = document.getElementById('sim-claim-btn');
+
+            claimBtn.disabled = true;
+            claimBtn.className = "bg-slate-800 text-slate-500 cursor-not-allowed font-bold px-8 py-3.5 rounded-xl transition";
+            claimBtn.innerText = "🔒 Tunggu 15 Detik";
+
+            timerBar.style.width = '100%';
+            timerDisplay.innerText = '⏱️ 15 detik';
+
+            clearInterval(simTimerInterval);
+            simTimerInterval = setInterval(() => {
+                secondsLeft--;
+                timerDisplay.innerText = '⏱️ ' + secondsLeft + ' detik';
+                timerBar.style.width = ((secondsLeft / 15) * 100) + '%';
+
+                if (secondsLeft <= 0) {
+                    clearInterval(simTimerInterval);
+                    claimBtn.disabled = false;
+                    claimBtn.className = "bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-extrabold px-8 py-3.5 rounded-xl shadow-lg shadow-emerald-500/30 transition transform hover:scale-105 animate-pulse cursor-pointer";
+                    claimBtn.innerText = "✨ KLAIM RP 500 SEKARANG";
+                    claimBtn.onclick = function() {
+                        simBalance += 500;
+                        updateSimUi();
+                        document.getElementById('sim-playing-view').classList.add('hidden');
+                        document.getElementById('sim-reward-view').classList.remove('hidden');
+                    };
+                }
+            }, 1000);
+        }
+
+        function triggerSimulatedWithdrawal() {
+            if (simBalance < simMinTarget) {
+                alert('Saldo Anda Rp ' + simBalance.toLocaleString('id-ID') + '. Syarat minimal penarikan adalah Rp 50.000. Tonton ' + Math.ceil((simMinTarget - simBalance)/500) + ' iklan lagi!');
+            } else {
+                alert('Selamat! Saldo Anda Rp ' + simBalance.toLocaleString('id-ID') + ' telah memenuhi syarat minimal penarikan Rp 50.000. Penarikan telah diproses ke DANA / GoPay Anda.');
+                simBalance -= 50000;
+                updateSimUi();
+                document.getElementById('sim-reward-view').classList.add('hidden');
+                document.getElementById('sim-idle-view').classList.remove('hidden');
+            }
+        }
+
+        // Calculator Logic
+        const slider = document.getElementById('ad-slider');
+        const sliderCount = document.getElementById('slider-count');
+        const calcDaily = document.getElementById('calc-daily');
+        const calcMonthly = document.getElementById('calc-monthly');
+        const calcDaysNeeded = document.getElementById('calc-days-needed');
+
+        slider.addEventListener('input', function() {
+            const count = parseInt(this.value);
+            sliderCount.innerText = count + ' Iklan';
+            const daily = count * 500;
+            const monthly = daily * 30;
+            const days = Math.ceil(50000 / daily);
+
+            calcDaily.innerText = 'Rp ' + daily.toLocaleString('id-ID');
+            calcMonthly.innerText = 'Rp ' + monthly.toLocaleString('id-ID');
+            calcDaysNeeded.innerText = days + (days === 1 ? ' Hari' : ' Hari');
+        });
+
+        // FAQ Toggle Logic
+        function toggleFaq(index) {
+            const ans = document.getElementById('faq-ans-' + index);
+            const icon = document.getElementById('faq-icon-' + index);
+            if (ans.classList.contains('hidden')) {
+                ans.classList.remove('hidden');
+                icon.innerText = '−';
+            } else {
+                ans.classList.add('hidden');
+                icon.innerText = '+';
+            }
+        }
+
+        // Modal Logic
+        function openDownloadModal() {
+            document.getElementById('download-modal').classList.remove('hidden');
+        }
+        function closeDownloadModal() {
+            document.getElementById('download-modal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
